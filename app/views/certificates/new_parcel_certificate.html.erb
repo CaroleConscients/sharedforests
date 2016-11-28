@@ -3,24 +3,8 @@
   <%= f.input :trees_quantity, label: "Nombre d'arbres cadeau ?"%>
   <%= f.input :name, label: "A qui souhaitez-vous offrir l'arbre ? Entrez un nom :", error: "Vous avez oublié le nom ;)" %>
   <%= f.input :occasion, label: "A quelle occasion ?", collection: OCCASIONS %>
-
-
-
-
-
-  <%= f.input :email, placeholder: 'user@domain.com' %>
-  <%= f.input :remember_me, inline_label: 'Yes, remember me' %>
-  <%= f.button :submit %>
+  <%= f.input :date, as: :date, label: "Date du cadeau" %>
+  <%= f.input :message, label: "Message", placeholder: "Message de X caractères" %>
+  <%= f.button :submit, label: "Valider" %>
 <% end %>
 
-
-
-# t.integer  "unique_number"
-#     t.integer  "parcel_id"
-#     t.string   "name"
-#     t.text     "message"
-#     t.datetime "date"
-#     t.integer  "trees_quantity"
-#     t.datetime "created_at",     null: false
-#     t.datetime "updated_at",     null: false
-#     t.index ["parcel_id"], name: "index_certificates_on_parcel_id", using: :btree
