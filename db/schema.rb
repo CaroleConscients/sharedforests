@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128150905) do
+ActiveRecord::Schema.define(version: 20161128154225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "certificates", force: :cascade do |t|
+    t.integer  "unique_number"
+    t.integer  "parcel_id"
+    t.string   "name"
+    t.text     "message"
+    t.datetime "date"
+    t.integer  "trees_quantity"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["parcel_id"], name: "index_certificates_on_parcel_id", using: :btree
+  end
+
+  create_table "parcels", force: :cascade do |t|
+    t.integer  "unique_number"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "farmer_name"
+    t.integer  "tree_quantity"
+    t.integer  "tree_quantity_remaining"
+    t.string   "tree_species"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "user_certificates", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "certificate_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["certificate_id"], name: "index_user_certificates_on_certificate_id", using: :btree
+    t.index ["user_id"], name: "index_user_certificates_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +65,7 @@ ActiveRecord::Schema.define(version: 20161128150905) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "certificates", "parcels"
+  add_foreign_key "user_certificates", "certificates"
+  add_foreign_key "user_certificates", "users"
 end
