@@ -45,3 +45,4 @@ end
 #     t.datetime "created_at",     null: false
 #     t.datetime "updated_at",     null: false
 #     t.index ["parcel_id"], name: "index_certificates_on_parcel_id", using: :btree
+
