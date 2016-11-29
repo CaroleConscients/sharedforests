@@ -5,11 +5,18 @@ class CertificatesController < ApplicationController
   end
 
   def create
-    @parcel = Parcel.find(params[:parcel_id])
     @certificate = Certificate.new(certificate_params)
-    @certificate.parcel = @certificate
-    @certificate.save
-    redirect_to certificate_path(@certificate)
+    @parcels = Parcel.where('tree_quantity_remaining >= ?', @certificate.trees_quantity)
+    if @parcels.empty?
+
+    else
+      @parcel = @parcels.first
+      @certificate.parcel = @parcel
+      @certificates.users << current_user
+      # add user2
+      @certificate.save
+      redirect_to certificate_path(@certificate)
+    end
   end
 
   def edit
@@ -23,7 +30,7 @@ class CertificatesController < ApplicationController
   private
 
   def certificate_params
-    params.require(:certificate).permit(:parcel_id, :name, :occasion, :message, :date, :trees_quantity)
+    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity)
   end
 end
 
