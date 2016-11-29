@@ -2,3 +2,53 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+
+.wrapper-grey {
+  background-color: ligthgray;
+}
+
+#plant:hover +#share {
+  background-color: grey;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute
+{ position: absolute;
+}
+
+
+.position-1 {
+  top: 100px;
+  right: 100px;
+}
+
+.position-2 {
+  top: 100px;
+  right: 100px;
+}
+
+.position-3 {
+  bottom: 10px;
+  right: 100px;
+}
+
+.position-4 {
+  top: 100px;
+  right: 100px;
+}
+
+.big {
+  height: 800px;
+  width: 200px;
+}
+
+.hovered:hover {
+  background-color: red;
+   & .autre {
+    color: white;
+  }
+}
