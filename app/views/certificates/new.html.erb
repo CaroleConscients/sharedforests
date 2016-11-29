@@ -1,0 +1,10 @@
+<h1>Plant a tree</h1>
+<%= simple_form_for @certificate do |f| %>
+  <%= f.input :trees_quantity, label: "Nombre d'arbres cadeau ?"%>
+  <%= f.input :name, label: "A qui souhaitez-vous offrir l'arbre ? Entrez un nom :", error: "Vous avez oublié le nom ;)" %>
+  <%= f.input :occasion, label: "A quelle occasion ?", collection: Certificate::OCCASIONS %>
+  <%= f.input :date, as: :date, label: "Date du cadeau" %>
+  <%= f.input :message, label: "Message", placeholder: "Message de X caractères" %>
+  <%= f.button :submit, label: "Valider" %>
+<% end %>
+
