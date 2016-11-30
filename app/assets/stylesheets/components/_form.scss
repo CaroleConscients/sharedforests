@@ -68,6 +68,20 @@
       background-color: $yellow;
     }
   }
+//   .datepicker {
+//     border-radius: 4px;
+//     direction: ltr;
+//     color: red;
+// }
+.datepicker table tr td, .datepicker table tr th {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    background-color: black;
+    color: white;
+}
 }
 
 
