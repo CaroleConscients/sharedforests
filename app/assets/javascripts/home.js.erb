@@ -1,10 +1,10 @@
 $(document).ready(function() {
   $("#plant").hover(
     function(event) {
-      $('#central').css({"background": "red"});
+      $('#central').css({"background-image": "url('<%= image_url "planting-a-tree.jpeg" %>')"});
     },
     function(event) {
-      $('#central').css({"background": "blue"});
+      $('#central').css({"background-image": "url('<%= image_url "base.jpeg" %>')"});
     }
   );
 });
@@ -12,10 +12,16 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#offer").hover(
     function(event) {
-      $('#central').css({"background-image": "url('<%= image_url "logo.png" %>')"});
+      $('#central').css({
+        "background-image": "url('<%= image_url "plant.jpeg" %>')",
+        "background-size": "cover"
+      });
     },
     function(event) {
-      $('#central').css({"background": "blue"});
+      $('#central').css({
+        "background-image": "url('<%= image_url "base.jpeg" %>')", 
+        "background-size": "cover"
+      });
     }
   );
 });
@@ -23,10 +29,17 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#grow").hover(
     function(event) {
-      $('#central').css({"background": "yellow"});
+      $('#central').css({
+        "background": "url('<%= image_url "grow.jpeg" %>')",
+        "background-size": "cover"
+
+    });
     },
     function(event) {
-      $('#central').css({"background": "blue"});
+      $('#central').css({
+        "background-image": "url('<%= image_url "base.jpeg" %>')", 
+        "background-size": "cover"
+      });
     }
   );
 });
@@ -34,10 +47,16 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#share").hover(
     function(event) {
-      $('#central').css({"background": "grey"});
+      $('#central').css({
+        "background": "url('<%= image_url "share.jpeg" %>')",
+        "background-size": "cover"
+    });
     },
     function(event) {
-      $('#central').css({"background": "blue"});
+      $('#central').css({
+        "background-image": "url('<%= image_url "base.jpeg" %>')"
+
+    });
     }
   );
 });

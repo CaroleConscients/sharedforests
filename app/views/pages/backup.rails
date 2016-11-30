@@ -1,3 +1,31 @@
+style="transform: rotate(35deg); transform-origin: left;" 
+
+
+ <div class="row">
+    <div class="col-sm-4">
+      <%= image_tag "logo.png",  style: "transform: rotate(45deg);" %>
+    </div>
+  </div>
+
+
+     <%= image_tag 'logo.png', class: "logo", 
+           'data-content': "
+              <h2>test</h2>" %>
+
+  $(document).ready(function() {
+  $("#offer").hover(
+    function(event) {
+      $('#central').css({"background": "green"});
+    },
+    function(event) {
+      $('#central').css({"background": "blue"});
+    }
+  );
+});
+
+"background-image": "url('<%= image_url "plant.jpeg" %>')",
+
+
 <div class="wrapper-grey">
   
   <div class="container">
@@ -22,12 +50,8 @@
     </div>
 
     <div class="row">
-      <div class="logo-flex-container" position: relative>
+      <div class="logo-flex-container">
         <div id="central" class="">
-          <div id="plant1" class="card">
-            <p>testplant1</p>
-            <h1>OFFER IT</h1>
-            <p> Je lui offre son certificat </>
         </div>
       </div>
     </div>
