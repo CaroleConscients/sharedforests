@@ -8,6 +8,11 @@
     background: red;
   }
 
+  .logo {
+    height: 400px;
+    width: 400px;
+  }
+
   .test {
     width: 30px;
     height: 30px;
@@ -27,6 +32,12 @@
     &:hover +.test{
       background: green;
     }
+  }
+
+  #central {
+    width: 350px;
+    height: 350px;
+    background: white;
   }
 /*
 #plant:hover {
