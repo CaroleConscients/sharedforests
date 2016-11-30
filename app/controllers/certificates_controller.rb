@@ -11,7 +11,8 @@ class CertificatesController < ApplicationController
     @certificate = Certificate.new(certificate_params)
     @parcels = Parcel.where('tree_quantity_remaining >= ?', @certificate.trees_quantity)
     if @parcels.empty?
-
+      flash[:alert] = "Commandes de parcelles en cours"
+      redirect_to root_path
     else
         @parcel = @parcels.first
         @certificate.parcel = @parcel
