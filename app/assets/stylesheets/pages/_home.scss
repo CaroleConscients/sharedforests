@@ -2,53 +2,63 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+  .square {
+    width: 350px;
+    height: 350px;
+    background: red;
+  }
 
+  .test {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: pink;
+    &:hover +.square{
+      width: 30px;
+      }  
+    }
 
-.wrapper-grey {
-  background-color: ligthgray;
-}
+  .square-blue{
+    width: 350px;
+    height: 350px;
+    background: blue;
+    cursor: pointer;
 
-#plant:hover +#share {
-  background-color: grey;
-}
-
-.relative {
-  position: relative;
-}
-
-.absolute
-{ position: absolute;
-}
-
-
-.position-1 {
-  top: 100px;
-  right: 100px;
-}
-
-.position-2 {
-  top: 100px;
-  right: 100px;
-}
-
-.position-3 {
-  bottom: 10px;
-  right: 100px;
-}
-
-.position-4 {
-  top: 100px;
-  right: 100px;
-}
-
-.big {
-  height: 800px;
-  width: 200px;
-}
-
-.hovered:hover {
-  background-color: red;
-   & .autre {
-    color: white;
+    &:hover +.test{
+      background: green;
+    }
+  }
+/*
+#plant:hover {
+  +#central{
+    background-image: image-url('plant.jpeg');
   }
 }
+#offer{
+  width: 350px;
+  height: 350px;
+  background: blue;
+
+  &:hover +.autre{
+    background: red;
+  }
+}
+#share{
+  width: 350px;
+  height: 350px;
+  background: blue;
+
+  &:hover +.autre{
+    background: red;
+  }
+}
+
+#grow{
+  width: 350px;
+  height: 350px;
+  background: blue;
+
+  &:hover +.autre{
+    background: red;
+  }
+}*/
