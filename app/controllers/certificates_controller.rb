@@ -1,5 +1,8 @@
 class CertificatesController < ApplicationController
 
+  def show
+  end
+
   def new
     @certificate = Certificate.new
   end
@@ -10,16 +13,13 @@ class CertificatesController < ApplicationController
     if @parcels.empty?
 
     else
-      if user_signed_in?
         @parcel = @parcels.first
         @certificate.parcel = @parcel
-        @certificates.users << current_user
+        @certificate.users << current_user
+        # kevin @certificates.users
         # add user2
         @certificate.save
-        redirect_to certificate_path(@certificate)
-      else
-        redirect_to new_user_session_path
-      end
+        redirect_to edit_certificate_path(@certificate)
     end
   end
 

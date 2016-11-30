@@ -57,6 +57,14 @@
   color: white;
   font-size: 14px;
   padding-right: 10px;
+    a {
+      color: white;
+      text-decoration: none;
+  }
+    a:hover {
+      color: $yellow;
+      text-decoration: none;
+  }
 }
 .navbar-wagon-link:hover {
   color: $yellow;
