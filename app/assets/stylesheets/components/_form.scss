@@ -6,6 +6,7 @@
   border: 5px solid #F5CA5F;
 }
 
+
 #new_certificate {
 
   label {
@@ -24,14 +25,25 @@
     padding: 0px 0px 0px 0px;
   }
 
-  input, placeholder {
+ // button, input, optgroup, select, textarea
+
+  optgroup, select{
+    width: 100%;
     color: white;
+    font-style: italic;
+    margin: 0;
+    border-bottom: 3px dashed #FADD93;
+    border-top: 0px dotted #FFC638;
+    border-right: 0px dotted #FFC638;
+    border-left: 0px dotted #FFC638;
+    background-color: $yellow;
   }
 
   .control-label {
     color: white;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 16px;
+
   }
 
   .form-control {
@@ -42,25 +54,20 @@
     background-color: $yellow;
     border-radius: none;
     box-shadow: none;
-    font-style: italic;
+    // font-style: italic;
     color: white;
-    // border: none;
+    input, textarea {
+      width: 100%;
+      color: white;
+      font-style: italic;
+      margin: 0;
+      border-bottom: 3px dashed #FADD93;
+      border-top: 0px dotted #FFC638;
+      border-right: 0px dotted #FFC638;
+      border-left: 0px dotted #FFC638;
+      background-color: $yellow;
+    }
   }
-  // .form-inline {
-  //   width: 450px;
-  //   font-size: 16px;
-  //   background: $yellow;
-  //   padding: 30px 30 px 15 px 30 px;
-  //   border: 5px solid $yellow;
-
-  // }
-  // .form-control {
-  //   width: 450px;
-  //   font-size: 16px;
-  //   background: $yellow;
-  //   padding: 30px 30 px 15 px 30 px;
-  //   border: 5px solid $yellow;
-  // }
 }
 
 
