@@ -2,10 +2,29 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-  .square {
-    width: 350px;
-    height: 350px;
-    background: red;
+  h1 {
+    font-size: 25px;
+  }
+  
+  #plant1 {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .card {
+    border: solid;
+    border-color: $green;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30%;
+    box-shadow: 1px 1px 1px;
+    z-index: 5;
   }
 
   .logo {
@@ -13,32 +32,55 @@
     width: 400px;
   }
 
-  .test {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    background: pink;
-    &:hover +.square{
-      width: 30px;
-      }  
-    }
-
-  .square-blue{
-    width: 350px;
-    height: 350px;
-    background: blue;
-    cursor: pointer;
-
-    &:hover +.test{
-      background: green;
-    }
+  #container-central {
+    position: absolute;
+    left: 400px;
   }
 
   #central {
-    width: 350px;
-    height: 350px;
+    border: solid;
+    border-color: $green;
+    width: 650px;
+    height: 450px;
     background: white;
+    border-radius: 20%;
+    background-size: cover;
+    z-index: 30;
   }
+
+  #plant:hover {
+     font-weight: bold;
+     background-color: $green;
+     color: white;
+  }
+
+  #offer:hover {
+     font-weight: bold;
+     background-color: $green;
+     color: white;
+  }
+
+  #share:hover {
+     font-weight: bold;
+     background-color: $green;
+     color: white;
+  }
+
+   #grow:hover {
+     font-weight: bold;
+     background-color: $green;
+     color: white;
+  }
+
+  .logo-flex-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+
+
+
 /*
 #plant:hover {
   +#central{
