@@ -1,7 +1,58 @@
 .certificate-border {
-  border-top: 15px solid $green;
-  border-right: 15px solid $green;
-  border-left: 15px solid $green;
-  border-bottom: 70px solid $green;
-  height: 74vh;
+  border-top: 14px solid $green;
+  border-right: 14px solid $green;
+  border-left: 14px solid $green;
+  border-bottom: 57px solid $green;
+  height: 609px;
+  width: 927px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.certificate-layout {
+  position: relative;
+  height: 540px;
+  width: 899px;
+  background-color: $red;
+}
+.certificate-personal-info {
+  height: 471px;
+  width: 220px;
+  background-color: $gray;
+  position: absolute;
+  top: 48px;
+  left: 36px;
+}
+
+.certificate-headers {
+  height: 127px;
+  width: 899px;
+  background-color: black;
+}
+
+.certificate-banner {
+  height: 162px;
+  width: 899px;
+  background-color: purple;
+}
+
+.certificate-description {
+  height: 256px;
+  width: 899px;
+  background-color: orange;
+}
+
+
+
+// .logo-center {
+//   width : 20px;
+// }
+// .banner {
+//   height: 175px;
+//   width: 100%;
+//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+//   background-size: cover !important;
+//   color: white;
+//   position: absolute;
+//   top: 110px;
+// }
