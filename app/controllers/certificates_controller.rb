@@ -10,12 +10,16 @@ class CertificatesController < ApplicationController
     if @parcels.empty?
 
     else
-      @parcel = @parcels.first
-      @certificate.parcel = @parcel
-      @certificates.users << current_user
-      # add user2
-      @certificate.save
-      redirect_to certificate_path(@certificate)
+      if user_signed_in?
+        @parcel = @parcels.first
+        @certificate.parcel = @parcel
+        @certificates.users << current_user
+        # add user2
+        @certificate.save
+        redirect_to certificate_path(@certificate)
+      else
+        redirect_to new_user_session_path
+      end
     end
   end
 
@@ -32,17 +36,9 @@ class CertificatesController < ApplicationController
   def certificate_params
     params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity)
   end
+
 end
 
 
 
-# t.integer  "unique_number"
-#     t.integer  "parcel_id"
-#     t.string   "name"
-#     t.text     "message"
-#     t.datetime "date"
-#     t.integer  "trees_quantity"
-#     t.datetime "created_at",     null: false
-#     t.datetime "updated_at",     null: false
-#     t.index ["parcel_id"], name: "index_certificates_on_parcel_id", using: :btree
 
