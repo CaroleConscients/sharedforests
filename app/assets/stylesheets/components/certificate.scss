@@ -15,6 +15,8 @@
   width: 899px;
   background-color: $red;
 }
+
+// CERTIFICATE PERSONAL INFO - CADRE GAUCHE
 .certificate-personal-info {
   height: 471px;
   width: 220px;
@@ -27,28 +29,80 @@
   left: 36px;
 }
 
+.certificate-number {
+  color: $gray;
+  font-family: 'Muli', sans-serif;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-right: 11px;
+  text-align: end;
+}
+
+.certificate-tree-quantity {
+  color: $green;
+  font-family: 'Muli', sans-serif;
+  font-size: 20px;
+  margin-top: 3px;
+  margin-right: 11px;
+  text-align: end;
+}
+
+.certificate-personal-info-logo {
+  background-size: cover;
+  height: 100px;
+  width: 100%;
+  margin-top: 42px;
+}
+
+.certificate-attribution-title {
+
+}
+
+.certificate-attribution-name {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom : 1px dotted $gray
+}
+
+.certificate-parcel-info {
+
+}
+
+// CERTIFICATE HEADER
 .certificate-headers {
   height: 127px;
   width: 899px;
-  background-color: black;
-  position: absolute;
+  background-color: white;
+  // position: relative;
 }
 
 .certificate-headers-content {
-  position: relative;
-  top: 15px;
-  margin-left: 390px;
+  position: absolute;
+  top: 9px;
+  margin-left: 256px;
     .headers-logo {
       background-size: cover;
       height: 48px;
       width : 142px;
-      margin-left: 80px;
+      margin-left: 205px;
     }
-    .headers-text {
-
+    .headers-title {
+      color: $gray;
+      font-family: 'Muli', sans-serif;
+      margin-top: 12px;
+      margin-left: 65px;
+      font-size: 22px;
+      letter-spacing: 0.4px;
+    }
+    .headers-sub-title {
+      color: $gray;
+      font-family: 'Muli', sans-serif;
+      font-size: 15px;
+      letter-spacing: -0.8px;
+      margin-left: 125px;
     }
 }
-
 .certificate-banner {
   height: 162px;
   width: 899px;
@@ -62,16 +116,3 @@
 }
 
 
-
-// .logo-center {
-//   width : 20px;
-// }
-// .banner {
-//   height: 175px;
-//   width: 100%;
-//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   background-size: cover !important;
-//   color: white;
-//   position: absolute;
-//   top: 110px;
-// }
