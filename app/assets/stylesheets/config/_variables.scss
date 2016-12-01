@@ -2,9 +2,25 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Raleway", "Helvetica", "sans-serif";
+
+@import url("https://fonts.googleapis.com/css?family=Cantata+One|Muli:300,300i,400,400i|Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i");
+$base-font: "Muli", "Helvetica", "sans-serif";
+$header-font: "Cantata One", "Helvetica", "sans-serif";
+
+
+// OPTION POUR TITLE
+// > font-family: 'Raleway', sans-serif;
+// COMME CENTURY GOTHIC
+// > font-family: 'Muli', sans-serif;
+// COMME GEORGIA
+// > font-family: 'Cantata One', serif;
+
+// TEMPLATE MINIMAL WAGON
+// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+// $base-font: "Open Sans", "Helvetica", "sans-serif";
+// $header-font: "Raleway", "Helvetica", "sans-serif";
+
+
 
 // Local fonts (uncomment following lines)
 // @font-face {

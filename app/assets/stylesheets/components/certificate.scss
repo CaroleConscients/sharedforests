@@ -18,7 +18,10 @@
 .certificate-personal-info {
   height: 471px;
   width: 220px;
-  background-color: $gray;
+  background-color: white;
+  opacity: 0.4;
+  border: 1px solid $green;
+  border-radius: 5%;
   position: absolute;
   top: 48px;
   left: 36px;
@@ -28,6 +31,22 @@
   height: 127px;
   width: 899px;
   background-color: black;
+  position: absolute;
+}
+
+.certificate-headers-content {
+  position: relative;
+  top: 15px;
+  margin-left: 390px;
+    .headers-logo {
+      background-size: cover;
+      height: 48px;
+      width : 142px;
+      margin-left: 80px;
+    }
+    .headers-text {
+
+    }
 }
 
 .certificate-banner {
