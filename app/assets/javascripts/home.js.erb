@@ -1,16 +1,22 @@
 $(document).ready(function() {
-  $("#plant").hover(
+  $("#plant1").hover(
     function(event) {
       $('#central').css({"background-image": "url('<%= image_url "planting-a-tree.jpeg" %>')"});
+      $('#plant1').css({
+        "color": "red"
+    });
     },
     function(event) {
       $('#central').css({"background-image": "url('<%= image_url "base.jpeg" %>')"});
+      $('#plant1').css({
+        "color": "$green"
+    });
     }
   );
 });
 
 $(document).ready(function() {
-  $("#offer").hover(
+  $("#offer1").hover(
     function(event) {
       $('#central').css({
         "background-image": "url('<%= image_url "plant.jpeg" %>')",
@@ -27,7 +33,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $("#grow").hover(
+  $("#grow1").hover(
     function(event) {
       $('#central').css({
         "background": "url('<%= image_url "grow.jpeg" %>')",
@@ -45,7 +51,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $("#share").hover(
+  $("#share1").hover(
     function(event) {
       $('#central').css({
         "background": "url('<%= image_url "share.jpeg" %>')",
