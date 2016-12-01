@@ -21,7 +21,7 @@
   height: 471px;
   width: 220px;
   background-color: white;
-  opacity: 0.4;
+  opacity: 0.9;
   border: 1px solid $green;
   border-radius: 5%;
   position: absolute;
@@ -166,7 +166,7 @@
 
 // BOTTOM - CERTIFICATE BOTTOM TEXTE
 .certificate-description {
-  height: 249px;
+  height: 231px;
   width: 900px;
   background-color: white;
 }
@@ -217,7 +217,7 @@
     color: #C4C4C2;
     font-family: 'Cantata', serif;
     font-size: 9px;
-    margin-right: 648px;
+    margin-right: 557px;
     margin-top: 15px;
     line-height: 10px;
 }
@@ -230,7 +230,23 @@
 
 // BOTTOM RIGHT STAMP AND SIGNATURE
 .certificate-stamp-sign {
-  background-color: red;
-  position: absolute;
+    // background-color: red;
+    position: absolute;
+    background-size: cover;
+    width: 178px;
+    height: 129px;
+    right: 32px;
+    bottom: -30px;
+}
+
+.year {
+    position: absolute;
+    width: 178px;
+    height: 44px;
+    left: 2px;
+    bottom: -46px;
+    font-family: "Signika", sans-serif;
+    font-size: 40px;
+    color: #68aa8c;
 }
 
