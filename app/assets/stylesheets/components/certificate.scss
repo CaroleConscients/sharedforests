@@ -11,7 +11,7 @@
 
 .certificate-layout {
   position: relative;
-  height: 540px;
+  height: 538px;
   width: 899px;
   background-color: white;
 }
@@ -30,20 +30,37 @@
 }
 
 .certificate-number {
-  color: $gray;
-  font-family: 'Muli', sans-serif;
-  font-size: 12px;
+  width: 100%;
+  height: 25px;
   margin-top: 10px;
-  margin-right: 11px;
-  text-align: end;
+  .certificate-number-text {
+    color: $gray;
+    font-family: 'Muli', sans-serif;
+    font-size: 12px;
+    // margin-top: 10px;
+    margin-left: 10px;
+    text-align: start;
+    margin-left: 10px;
+    position: relative;
+  }
+  .certificate-number-info {
+    color: $green;
+    font-family: 'Muli', sans-serif;
+    font-size: 12px;
+    // margin-top: -16px;
+    text-align: end;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }
 
+
 .certificate-tree-quantity {
+  // width: 100%;
   color: $green;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
-  margin-top: 3px;
-  margin-right: 11px;
   text-align: end;
 }
 
@@ -55,14 +72,16 @@
 }
 
 .certificate-attribution-title {
+  width: 100%;
   color: $gray;
   font-family: 'Muli', sans-serif;
   font-size: 12px;
-  margin-top: 50px;
+  margin-top: 38px;
   text-align: center;
 }
 
 .certificate-attribution-name {
+  width: 100%;
   color: $green;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
@@ -71,28 +90,33 @@
 }
 
 .certificate-attribution-message {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom : 1px dotted $gray;
+  width: 95%;
+  line-height: 15px;
   color: $green;
   font-family: 'Muli', sans-serif;
   font-size: 12px;
   font-style: italic;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 8px;
+  // margin-left: 10px;
+  // margin-right: 10px;
+  // padding-bottom: 8px;
 }
 
 .certificate-parcel-info {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top : 1px dotted $gray;
+  padding-top: 10px;
+  width: 90%;
+  margin: auto;
   color: $gray;
   font-family: 'Muli', sans-serif;
   font-size: 11px;
   letter-spacing: -1px;
   text-align: center;
-  margin-right: 9px;
-  margin-left: 9px;
+  // margin-right: 9px;
+  // margin-left: 9px;
   line-height: 14px;
   margin-top: 8px;
 }
@@ -142,21 +166,71 @@
 
 // BOTTOM - CERTIFICATE BOTTOM TEXTE
 .certificate-description {
-  height: 256px;
+  height: 249px;
   width: 900px;
-  background-color: orange;
+  background-color: white;
 }
 
 .certificate-general-text {
-  color : #6E6E6A;
-  font-family: 'Cantata One', serif;
-  font-size: 12px;
-  line-height: 14px;
   margin-left: 282px;
   margin-top: 20px;
   margin-right: 30px;
-  text-align: justify
-
+  text-align: justify;
+  color : #A8A8A7;
+  font-family: 'Cantata', serif;
+  font-size: 12px;
+  line-height: 14px;
 }
 
+.text-signature{
+  color : #A8A8A7;
+  font-family: 'Cantata', serif;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: end;
+  margin-right: 30px;
+}
+
+.certificate-date {
+  margin-left: 282px;
+  margin-top: 10px;
+  width: 100%;
+  height: 24px;
+  .certificate-date-title {
+      color: #A8A8A7;
+      font-family: 'Muli', sans-serif;
+      font-size: 12px;
+      position: relative;
+  }
+  .certificate-date-choosen {
+      color: $green;
+      font-family: 'Muli', sans-serif;
+      font-size: 12px;
+      position: absolute;
+      top: 425px;
+      right: 459px;
+  }
+}
+
+.end-bottom-text {
+    text-align: justify;
+    color: #C4C4C2;
+    font-family: 'Cantata', serif;
+    font-size: 9px;
+    margin-right: 648px;
+    margin-top: 15px;
+    line-height: 10px;
+}
+
+.logo-bottom {
+    width: 20%;
+    height: 36px;
+    margin-top: 13px;
+}
+
+// BOTTOM RIGHT STAMP AND SIGNATURE
+.certificate-stamp-sign {
+  background-color: red;
+  position: absolute;
+}
 
