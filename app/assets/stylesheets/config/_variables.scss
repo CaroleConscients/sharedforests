@@ -3,9 +3,9 @@
  * ------------------------------------- */
 // Google fonts
 
-@import url("https://fonts.googleapis.com/css?family=Cantata+One|Muli:300,300i,400,400i|Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i");
-$base-font: "Muli", "Helvetica", "sans-serif";
-$header-font: "Cantata One", "Helvetica", "sans-serif";
+@import url("https://fonts.googleapis.com/css?family=Arimo|Cantata+One|Droid+Serif|Muli:300,300i,400,400i|Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Signika");
+$base-font: "Droid Serif", "Helvetica", "sans-serif";
+$header-font: "Signika", "Helvetica", "sans-serif";
 
 
 // OPTION POUR TITLE
@@ -14,6 +14,12 @@ $header-font: "Cantata One", "Helvetica", "sans-serif";
 // > font-family: 'Muli', sans-serif;
 // COMME GEORGIA
 // > font-family: 'Cantata One', serif;
+
+
+
+// font-family: 'Signika', sans-serif;
+// font-family: 'Arimo', sans-serif;
+// font-family: 'Droid Serif', serif;
 
 // TEMPLATE MINIMAL WAGON
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
