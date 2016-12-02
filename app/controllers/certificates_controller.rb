@@ -40,6 +40,7 @@ class CertificatesController < ApplicationController
 
   def edit
     @certificate = Certificate.find(params[:id])
+    @id = params[:id]
   end
 
   def update
