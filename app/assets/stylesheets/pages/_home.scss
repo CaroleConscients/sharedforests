@@ -1,159 +1,167 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
-  h1 {
-    font-size: 25px;
-    margin-top: 11px;
-  }
-  
-  #link {
-    position: absolute;
-    bottom: 66px;
-    left: 235px;
-    height: 50px;
-    width: 200px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    font-size: 24px;
-  }
-
-  #plant1 {
-    position: absolute;
-    bottom: 246px;
-    left: 56px;
-    background-color: white;
-    z-index: 10;
-  }
-
-  #offer1 {
-    position: absolute;
-    top: 274px;
-    left: 67px;
-    z-index: 10;
-  }
-
-  #share1 {
-    position: absolute;
-    top: 273px;
-    right: 71px;
-    z-index: 10;
-  }
-
-  #grow1 {
-    position: absolute;
-    bottom: 249px;
-    right: 32px;
-    z-index: 10;
-  }
-
+  // GLOBAL CONTAINERS
   .container {
     position: relative;
   }
 
-  .card {
-    border: solid;
-    border-color: $green;
-    text-align: center;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 100%;
-    height: 200px;
-    width: 280px;
-    box-shadow: 1px 1px 1px;
-    z-index: 10;
-    display: flex;  
-    flex-direction: column;
+    .logo-flex-container {
+    padding-top: 120px;
+    display: flex;
+    flex-flow: row;
     justify-content: center;
+    position: relative;
   }
 
-  .logo {
-    height: 400px;
-    width: 400px;
-  }
-
- /* #container-central {
-    position: absolute;
-    left: 400px;
-  }*/
-
+// CENTRAL ROUND IMAGE PLACEHOLDER
   #central {
     position: relative;
-    border: solid;
-    border-color: $green;
-    width: 650px;
+    border: none;
+    width: 450px;
     height: 450px;
-    border-radius: 100%;
+    border-radius: 50%;
     background-size: cover;
     z-index: 30;
-    background-image: "base.jpeg";
+    background-image: image-url("pp-fleuve-plant.png");
   }
 
+  .arrow {
+    width: 720px;
+    height: 695px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -20px;
+    left: 254px;
+
+  }
+
+// ROUND CARDS
+.card {
+    // border: 1px solid #EBEBE8;
+    webkit-box-shadow: 2px 2px 8px rgba(44, 54, 58, .36);
+    background-color: #FAF9F7;
+    text-align: center;
+    // padding: 5px;
+    padding: 0 30px 0 20px;
+    margin: 5px;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    box-shadow: 1px 1px 1px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+//// ROUND CARDS - INNER TEXT - 1 PLANT A TREE
+  #plant1 {
+    position: absolute;
+    bottom: 285px;
+    left: 220px;
+    z-index: 10;
+    text-align: end;
+    padding-right: 57px;
+      h4 {
+        color: $red;
+      }
+  }
   #plant1:hover {
      font-weight: bold;
      background-color: $green;
      color: white;
+      h4 {
+        color: white;
+      }
   }
 
+//// ROUND CARDS - INNER TEXT - 2 OFFER A TREE
+  #offer1 {
+    position: absolute;
+    top: 53px;
+    left: 677px;
+    z-index: 10;
+    text-align: end;
+      h4 {
+        color: $red;
+      }
+  }
   #offer1:hover {
      font-weight: bold;
      background-color: $green;
      color: white;
+      h4 {
+        color: white;
+      }
   }
 
+//// ROUND CARDS - INNER TEXT - 3 START AND SHARE A FOREST
+  #share1 {
+    position: absolute;
+    top: 332px;
+    right: 193px;
+    z-index: 10;
+    text-align: start;
+    padding-left: 59px;
+      h4 {
+        color: $red;
+      }
+  }
   #share1:hover {
      font-weight: bold;
      background-color: $green;
      color: white;
+      h4 {
+        color: white;
+      }
+  }
+
+//// ROUND CARDS - INNER TEXT - 4 GROW MY FOREST
+  #grow1 {
+    position: absolute;
+    bottom: -6px;
+    right: 752px;
+    z-index: 10;
+    text-align: end;
+      h4 {
+        color: $red;
+      }
   }
 
    #grow1:hover {
      font-weight: bold;
      background-color: $green;
      color: white;
-  }
-
-  .logo-flex-container {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
+      h4 {
+        color: white;
+      }
   }
 
 
-
-
-/*
-#plant:hover {
-  +#central{
-    background-image: image-url('plant.jpeg');
-  }
+// BOTTOM BUTTON CALL TO ACTION PLANT
+.btn-red {
+  position: absolute;
+  bottom: 30px;
+  left: 165px;
+  background-color: $red;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  font-size: 12px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
 }
-#offer{
-  width: 350px;
-  height: 350px;
-  background: blue;
+ //FONT CLASS
+ .small-p {
+  font-size: 13px;
+ }
 
-  &:hover +.autre{
-    background: red;
-  }
-}
-#share{
-  width: 350px;
-  height: 350px;
-  background: blue;
+ .red {
+  color: $red;
+ }
 
-  &:hover +.autre{
-    background: red;
-  }
-}
 
-#grow{
-  width: 350px;
-  height: 350px;
-  background: blue;
 
-  &:hover +.autre{
-    background: red;
-  }
-}*/
+
