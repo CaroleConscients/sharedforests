@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Parcel.destroy_all
+
 Parcel.create!({
   unique_number: 21559,
   latitude: -6.482427,
