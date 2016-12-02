@@ -15,6 +15,7 @@ class CertificatesController < ApplicationController
     @weather_hash = @weather_array[0]
     @weather_description = @weather_hash["description"]
     @weather_temp = @weather_json["main"]["temp"]/10
+    @weather_humidity = @weather_json["main"]["humidity"]
   end
 
   def new

@@ -1,10 +1,10 @@
 
-<div id="weather">
+<div id="weather" style="text-align: center">
   <h2>The weather right now is <%= @weather_description %></h2>
-  <h2>The temperature is currently <%= @weather_temp.round(1) %>°</h2>
+  <h2>The temperature is currently <%= @weather_temp.round(1) %>°, humidity is now at <%= @weather_humidity %>% </h2>
+  <h2></h2>
+  <h2>The farmer is <%= @farmer %></h2>
 </div>
-
-
 
 
 <div id="map" style="width: 100%; height: 600px;"></div>
