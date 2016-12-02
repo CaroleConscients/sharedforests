@@ -7,12 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Parcel.create!({
   unique_number: 21559,
-  latitude: 7.26384,
-  longitude: 76.79193,
+  latitude: -6.482427,
+  longitude: -76.375666,
   farmer_name: "Genry Valles Panduro",
-  tree_quantity: 100,
+  tree_quantity: 200,
   tree_quantity_remaining: 99,
   tree_species: "Capirona"
+  })
+
+Certificate.create! ({
+  parcel_id: 2,
+  name: "papa",
+  message: "merci"
   })
 
 # Parcel.create!({

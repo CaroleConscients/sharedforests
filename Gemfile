@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'coffee-rails'
 gem 'gmaps4rails'
+gem 'httparty'
 
 group :development, :test do
   gem 'binding_of_caller'
