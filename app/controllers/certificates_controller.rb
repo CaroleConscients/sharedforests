@@ -1,6 +1,11 @@
 class CertificatesController < ApplicationController
 
   def show
+    @certificate = Certificate.find(params[:id])
+    @latitude = @certificate.parcel.latitude
+    @longitude = @certificate.parcel.longitude
+    @farmer = @certificate.parcel.farmer_name
+    @hash = [{lat: @latitude, lng: @longitude}]
   end
 
   def new
