@@ -1,9 +1,8 @@
 $(document).ready(function() {
   $("#plant1").hover(
     function(event) {
-      $('#central').css({"background-image": "url('<%= image_url "planting-a-tree.jpeg" %>')"});
-      $('#plant1').css({
-        "color": "red"
+      $('#central').css({
+        "background-image": "url('<%= image_url "planting-a-tree.jpeg" %>')"
     });
     },
     function(event) {
