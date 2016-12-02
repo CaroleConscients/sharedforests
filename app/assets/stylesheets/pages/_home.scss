@@ -4,6 +4,7 @@
  * ------------------------------------- */
   h1 {
     font-size: 25px;
+    margin-top: 11px;
   }
   
   #link {
@@ -21,25 +22,28 @@
     bottom: 246px;
     left: 56px;
     background-color: white;
-    z-index: 2;
+    z-index: 10;
   }
 
   #offer1 {
     position: absolute;
     top: 274px;
-    left: 54px;
+    left: 67px;
+    z-index: 10;
   }
 
   #share1 {
     position: absolute;
     top: 273px;
-    right: 50px;
+    right: 71px;
+    z-index: 10;
   }
 
   #grow1 {
     position: absolute;
     bottom: 249px;
     right: 32px;
+    z-index: 10;
   }
 
   .container {
@@ -50,13 +54,16 @@
     border: solid;
     border-color: $green;
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 100%;
     height: 200px;
-    width: 250px;
+    width: 280px;
     box-shadow: 1px 1px 1px;
-    z-index: 5;
+    z-index: 10;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
   }
 
   .logo {
@@ -64,12 +71,13 @@
     width: 400px;
   }
 
-  #container-central {
+ /* #container-central {
     position: absolute;
     left: 400px;
-  }
+  }*/
 
   #central {
+    position: relative;
     border: solid;
     border-color: $green;
     width: 650px;
