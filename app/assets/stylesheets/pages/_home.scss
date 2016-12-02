@@ -4,11 +4,25 @@
   }
 
     .logo-flex-container {
+    // padding-top: 120px;
+    // display: flex;
+    // flex-flow: row;
+    // justify-content: center;
+    // position: relative;
     padding-top: 120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-flow: row;
     flex-flow: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     position: relative;
+    width: 450px;
+    height: 450px;
+    margin: auto;
+
   }
 
 // CENTRAL ROUND IMAGE PLACEHOLDER
@@ -24,12 +38,15 @@
   }
 
   .arrow {
-    width: 720px;
-    height: 695px;
+    // width: 720px;
+    // height: 695px;
+    // background-repeat: no-repeat;
+    // position: absolute;
+    // top: -20px;
+    // left: 254px;
     background-repeat: no-repeat;
-    position: absolute;
-    top: -20px;
-    left: 254px;
+    background-position: center -30px;
+    min-height: 100vh;
 
   }
 
@@ -56,11 +73,11 @@
 //// ROUND CARDS - INNER TEXT - 1 PLANT A TREE
   #plant1 {
     position: absolute;
-    bottom: 285px;
-    left: 220px;
     z-index: 10;
     text-align: end;
     padding-right: 57px;
+    top: 40px;
+    left: -88px;
       h4 {
         color: $red;
       }
@@ -77,10 +94,10 @@
 //// ROUND CARDS - INNER TEXT - 2 OFFER A TREE
   #offer1 {
     position: absolute;
-    top: 53px;
-    left: 677px;
     z-index: 10;
     text-align: end;
+    top: 32px;
+    right: -63px;
       h4 {
         color: $red;
       }
@@ -97,11 +114,11 @@
 //// ROUND CARDS - INNER TEXT - 3 START AND SHARE A FOREST
   #share1 {
     position: absolute;
-    top: 332px;
-    right: 193px;
     z-index: 10;
     text-align: start;
     padding-left: 59px;
+    bottom: -136px;
+    right: -151px;
       h4 {
         color: $red;
       }
@@ -118,10 +135,9 @@
 //// ROUND CARDS - INNER TEXT - 4 GROW MY FOREST
   #grow1 {
     position: absolute;
-    bottom: -6px;
-    right: 752px;
     z-index: 10;
-    text-align: end;
+    bottom: -100px;
+    left: -158px;
       h4 {
         color: $red;
       }
