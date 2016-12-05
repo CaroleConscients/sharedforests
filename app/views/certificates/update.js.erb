@@ -3,27 +3,25 @@
 <% else %>
   $("#certificate-tree-quantity-content").
     html("<%= j render 'certificate_customize_trees_quantity' %>");
+  $(".certificate-attribution-name").
+    html("<%= j render 'certificate_customize_name' %>");
+  $(".certificate-date-choosen").
+    html("<%= j render 'certificate_customize_date' %>");
+  $(".certificate-attribution-message").
+    html("<%= j render 'certificate_customize_message' %>");
   $('.popover').popover('hide');
   $('[data-toggle="popover"').popover({html: true});
 <% end %>
 
-
-
-$("certificate-attribution-name").
-  html("<%=j render 'certificate_customize_name'.upcase %>");
-  $('.popover').popover('hide');
-  $('[data-toggle="popover"').popover({html: true});
-<% end %>
-
-
+// v1
  // $(".edit-certificate-name").addClass('hidden');
  //  $(".certificate-attribution-name").removeClass('hidden').
- //    html('<%= @certificate.name.upcase %><i class="fa fa-plus-circle" id="modify-certificate-name"></i>');
+ //    html('<%#= @certificate.name.upcase %><i class="fa fa-plus-circle" id="modify-certificate-name"></i>');
 
 
- $(".edit-certificate-date").addClass('hidden');
-  $(".certificate-date-choosen").removeClass('hidden').
-    html('<%= @certificate.date %><i class="fa fa-plus-circle" id="modify-certificate-date"></i>');
+ // $(".edit-certificate-date").addClass('hidden');
+ //  $(".certificate-date-choosen").removeClass('hidden').
+ //    html('<%#= @certificate.date %><i class="fa fa-plus-circle" id="modify-certificate-date"></i>');
 
 
 

@@ -1,12 +1,9 @@
-<%= @certificate.name.upcase %>
+<%= @certificate.message %>
 <i class="fa fa-plus-circle" id="modify-certificate-name"
   data-toggle="popover"
-  title="Changez le nom du destinataire"
+  title="Changez le message"
   data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
-    <%= f.input :name %>
+    <%= f.input :message %>
     <%= f.submit value: "ok" %>
   <% end %>'></i>
-
-
-

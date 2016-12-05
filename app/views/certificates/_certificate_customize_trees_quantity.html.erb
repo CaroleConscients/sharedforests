@@ -2,7 +2,7 @@
 <i class="fa fa-plus-circle" id="modify-trees-quantity-button"
   data-toggle="popover"
   title="Change la quantité d'arbre"
-  data-container=".certificate-description"
+  data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
       <%= f.input :trees_quantity, label: false %>
       <%= f.submit value: "ok"%>

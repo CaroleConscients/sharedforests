@@ -3,6 +3,7 @@
 <!-- BEGINNING BORDER AND LAYOUT -->
       <div class="certificate-border">
         <div class="certificate-layout">
+<!-- LEFT - CERTIFICATE PERSONAL INFO -->
 <!-- TOP - CERTIFICATE HEADERS -->
           <div class="certificate-headers">
             <div class="certificate-headers-content">
@@ -24,18 +25,22 @@
               Merci pour votre contribution !
             </div>
             <div class="text-signature">Les équipes CONSCIENTS et PUR PROJET</div>
+
             <div class="certificate-date">
-              DATE: <span class="certificate-date-choosen"> <%= I18n.transliterate(l @certificate.date, format: "%-d %B %Y").upcase %> <i class="fa fa-plus-circle" id="modify-certificate-date"></i></span>
-              <%= simple_form_for @certificate, html: { class: 'hidden edit-certificate-date btn btn-certificate-date-update' }, remote: true do |f| %>
-                <%= f.text_field :date, class: "datepicker" %>
-                <%= f.submit value: "ok" %>
-              <% end %>
+              <div class="full-date">
+                <%= render 'certificate_customize_date' %>
+<!--                 DATE: <span class="certificate-date-choosen"> <%#= I18n.transliterate(l @certificate.date, format: "%-d %B %Y").upcase %> <i class="fa fa-plus-circle" id="modify-certificate-date"></i></span>
+                <%#= simple_form_for @certificate, remote: true do |f| %>
+                  <%#= f.text_field :date, class: "datepicker" %>
+                  <%#= f.submit value: "ok" %>
+                <%# end %> -->
+
+              </div>
 
               <div class="end-bottom-text">Conscients soutient les programmes de reforestation de Pur Projet, une entreprise Colibris, signataire de la charte de compensation volontaire de l'Ademe et partenaire de la campagne Plantons pour la Planète</div>
               <div class="logo-bottom" style="background-image: url('<%= image_url("logo-bottom-certificate.png")%>');"></div>
             </div>
           </div>
-<!-- LEFT - CERTIFICATE PERSONAL INFO -->
           <div class="certificate-personal-info">
             <div class="certificate-number">
               <div class="certificate-number-text">CERTIFICAT N°</div>
@@ -53,7 +58,9 @@
               <div class="certificate-attribution-perso-box">
                 <div class="certificate-attribution-name">
                   <%= render 'certificate_customize_name' %>
-                <div class="certificate-attribution-message"> <%= @certificate.message %></div>
+                </div>
+                <div class="certificate-attribution-message">
+                 <%= render 'certificate_customize_message' %></div>
               </div>
             </div>
             <div class="certificate-parcel-info">
@@ -81,26 +88,6 @@
 <div class="container">
   <%#= form.for @designs do |d| %>
 </div>
-
-<% content_for :after_js do %>
-  <script>
-    $(document).ready(function() {
-      $("#modify-trees-quantity-button").click(function() {
-        //$("#certificate-tree-quantity-content").addClass('hidden');
-        //$(".edit-trees-quantity").removeClass('hidden');
-      });
-      $("#modify-certificate-name").click(function() {
-        // $(".certificate-attribution-name").addClass('hidden');
-        // $(".edit-certificate-name").removeClass('hidden');
-      });
-      $("#modify-certificate-date").click(function() {
-        $(".certificate-date-choosen").addClass('hidden');
-        $(".edit-certificate-date").removeClass('hidden');
-      });
-    });
-  </script>
-<% end %>
-
 
 
 
