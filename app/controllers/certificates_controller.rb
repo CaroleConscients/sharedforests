@@ -45,10 +45,19 @@ class CertificatesController < ApplicationController
   end
 
   def update
-
+    @certificate = Certificate.find(params[:id])
+    if @certificate.update(certificate_params)
+      flash[:alert] = nil
+    else
+      flash[:alert] = @certificate.errors.full_messages.join(', ')
+    end
   end
 
   private
+
+  def parcel_has_enough_trees?
+    @certificate.trees_quantity <= @certificate.parcel.tree_quantity_remaining
+  end
 
   def certificate_params
     params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity)

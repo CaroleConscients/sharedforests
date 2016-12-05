@@ -1,0 +1,36 @@
+<% if flash[:alert] %>
+  $('.container').prepend('<%= j render "shared/flashes" %>');
+<% else %>
+  $("#certificate-tree-quantity-content").
+    html("<%= j render 'certificate_customize_trees_quantity' %>");
+  $('.popover').popover('hide');
+  $('[data-toggle="popover"').popover({html: true});
+<% end %>
+
+
+
+$("certificate-attribution-name").
+  html("<%=j render 'certificate_customize_name'.upcase %>");
+  $('.popover').popover('hide');
+  $('[data-toggle="popover"').popover({html: true});
+<% end %>
+
+
+ // $(".edit-certificate-name").addClass('hidden');
+ //  $(".certificate-attribution-name").removeClass('hidden').
+ //    html('<%= @certificate.name.upcase %><i class="fa fa-plus-circle" id="modify-certificate-name"></i>');
+
+
+ $(".edit-certificate-date").addClass('hidden');
+  $(".certificate-date-choosen").removeClass('hidden').
+    html('<%= @certificate.date %><i class="fa fa-plus-circle" id="modify-certificate-date"></i>');
+
+
+
+
+
+
+
+
+
+
