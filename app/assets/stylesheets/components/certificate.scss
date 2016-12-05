@@ -18,12 +18,12 @@
 
 // LEFT - CERTIFICATE PERSONAL INFO
 .certificate-personal-info {
-  height: 471px;
+  height: 480px;
   width: 220px;
   background-color: white;
   opacity: 0.9;
   border: 1px solid $green;
-  border-radius: 5%;
+  border-radius: 10px;
   position: absolute;
   top: 48px;
   left: 36px;
@@ -81,12 +81,20 @@
   text-align: center;
 }
 
+.certificate-attribution-perso {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  .certificate-attribution-perso-box {
+    width: 100%;
+  }
+}
+
 .certificate-attribution-name {
   width: 100%;
   color: $green;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
-  margin-top: 6px;
   text-align: center;
 }
 

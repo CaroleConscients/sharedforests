@@ -9,3 +9,59 @@
 }
 
 
+.btn-certificate-tree-number-update {
+    height: 77px;
+    width: 100px;
+    opacity: 1;
+    background-color: #eff1f2;
+    color: green;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(77, 9, 18, 0.34);
+    position: absolute;
+    top: -24px;
+    left: -117px;
+}
+
+.btn-certificate-name-update {
+    height: 132px;
+    width: 261px;
+    opacity: 1;
+    background-color: #eff1f2;
+    color: $green;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(77, 9, 18, 0.34);
+    position: absolute;
+    bottom: 139px;
+    left: -250px;
+}
+
+.btn-certificate-date-update {
+    height: 132px;
+    width: 261px;
+    opacity: 1;
+    background-color: #eff1f2;
+    color: $green;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(77, 9, 18, 0.34);
+    position: absolute;
+    bottom: 31px;
+    right: -67px;
+}
+
+.btn-edit-border-color {
+    height: 132px;
+    width: 261px;
+    opacity: 1;
+    background-color: #eff1f2;
+    color: $green;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(77, 9, 18, 0.34);
+    position: absolute;
+    top: 31px;
+    left: -67px;
+}
+
+// transform: rotate(180deg) scale(1, 1);
+
+
+

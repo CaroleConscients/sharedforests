@@ -4,26 +4,6 @@
       <div class="certificate-border">
         <div class="certificate-layout">
 <!-- LEFT - CERTIFICATE PERSONAL INFO -->
-          <div class="certificate-personal-info">
-            <div class="certificate-number">
-              <div class="certificate-number-text">CERTIFICAT N°</div>
-              <div class="certificate-number-info">AH-PE-12345-000</div>
-            </div>
-            <div class="certificate-tree-quantity">1 ARBRE</div>
-            <div class="certificate-personal-info-logo" style="background-image: url('<%= image_url("logopp-transparent.png") %>');"></div>
-            <div class="certificate-attribution-title"> ATTRIBUE A :</div>
-            <div class="certificate-attribution-name">NAME</div>
-            <div class="certificate-attribution-message">Message d'un nombre de caractères maximum défini à 60 carcar</div>
-            <div class="certificate-parcel-info">
-              Projet: Alto Huayabamba, San Martin, Pérou<br/>
-              Type: reforestation, agroforesterie<br/>
-              Partenaire: Fundacion Amazonia Viva<br/>
-              Parcelle: 1-1-SRA-1001-10-3-PA1<br/>
-              GPS lat: 7.26384 - GPS long: 76.79193<br/>
-              Espèces: Capirona<br/>
-              Producteur : GENRY VALLES PANDURO
-            </div>
-          </div>
 <!-- TOP - CERTIFICATE HEADERS -->
           <div class="certificate-headers">
             <div class="certificate-headers-content">
@@ -45,10 +25,52 @@
               Merci pour votre contribution !
             </div>
             <div class="text-signature">Les équipes CONSCIENTS et PUR PROJET</div>
+
             <div class="certificate-date">
-              DATE: <span class="certificate-date-choosen"> 24 SEPTEMBRE 2016</span>
+              <div class="full-date">
+                <%= render 'certificate_customize_date' %>
+<!--                 DATE: <span class="certificate-date-choosen"> <%#= I18n.transliterate(l @certificate.date, format: "%-d %B %Y").upcase %> <i class="fa fa-plus-circle" id="modify-certificate-date"></i></span>
+                <%#= simple_form_for @certificate, remote: true do |f| %>
+                  <%#= f.text_field :date, class: "datepicker" %>
+                  <%#= f.submit value: "ok" %>
+                <%# end %> -->
+
+              </div>
+
               <div class="end-bottom-text">Conscients soutient les programmes de reforestation de Pur Projet, une entreprise Colibris, signataire de la charte de compensation volontaire de l'Ademe et partenaire de la campagne Plantons pour la Planète</div>
               <div class="logo-bottom" style="background-image: url('<%= image_url("logo-bottom-certificate.png")%>');"></div>
+            </div>
+          </div>
+          <div class="certificate-personal-info">
+            <div class="certificate-number">
+              <div class="certificate-number-text">CERTIFICAT N°</div>
+              <div class="certificate-number-info">AH-PE-12345-000</div>
+            </div>
+            <div class="certificate-tree-quantity">
+              <div id="certificate-tree-quantity-content">
+                <%= render 'certificate_customize_trees_quantity' %>
+              </div>
+            </div>
+            <div class="certificate-personal-info-logo" style="background-image: url('<%= image_url("logopp-transparent.png") %>');"></div>
+            <div class="certificate-attribution-title"> ATTRIBUE A :</div>
+            <div class="certificate-attribution-perso">
+
+              <div class="certificate-attribution-perso-box">
+                <div class="certificate-attribution-name">
+                  <%= render 'certificate_customize_name' %>
+                </div>
+                <div class="certificate-attribution-message">
+                 <%= render 'certificate_customize_message' %></div>
+              </div>
+            </div>
+            <div class="certificate-parcel-info">
+              Projet: Alto Huayabamba, San Martin, Pérou<br/>
+              Type: reforestation, agroforesterie<br/>
+              Partenaire: Fundacion Amazonia Viva<br/>
+              Parcelle: 1-1-SRA-1001-10-3-PA1<br/>
+              GPS lat: 7.26384 - GPS long: 76.79193<br/>
+              Espèces: Capirona<br/>
+              Producteur : GENRY VALLES PANDURO
             </div>
           </div>
 <!-- BOTTOM STAMP -->
@@ -66,6 +88,7 @@
 <div class="container">
   <%#= form.for @designs do |d| %>
 </div>
+
 
 
 
