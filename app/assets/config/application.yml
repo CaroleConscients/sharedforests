@@ -3,10 +3,10 @@
 #
 development:
   google_server_api_key: AIzaSyByCsTtyt1F6e92TQVa7NAZKLY91rOw26g
-  google_browser_api_key: AIzaSyDM4IxntgpR_Za__LRm24RNnkYTWvqMk5M
+  google_browser_api_key: AIzaSyByCsTtyt1F6e92TQVa7NAZKLY91rOw26g
   CLOUDINARY_URL: cloudinary://146249474496482:dpoj9Wmsi_g6DDxE8ZvcOYP2veM@dj2tgc2bn
 
 production:
   google_server_api_key: AIzaSyByCsTtyt1F6e92TQVa7NAZKLY91rOw26g
-  google_browser_api_key: AIzaSyDM4IxntgpR_Za__LRm24RNnkYTWvqMk5M
+  google_browser_api_key: AIzaSyByCsTtyt1F6e92TQVa7NAZKLY91rOw26g
   CLOUDINARY_URL: cloudinary://146249474496482:dpoj9Wmsi_g6DDxE8ZvcOYP2veM@dj2tgc2bn
