@@ -4,8 +4,8 @@
   title="Modifier le nom du destinataire"
   data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
-    <%= f.input :name %>
-    <%= f.submit value: "ok" %>
+    <%= f.input :name, label: false%>
+    <%= f.button :submit, value: "ok", class: "certificate-submit-btn", data: {disable_with: "ok"} %>
   <% end %>'></i>
 
 

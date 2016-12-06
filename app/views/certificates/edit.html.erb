@@ -81,13 +81,6 @@
 </div>
 <!-- END CONTAINER 1 -->
 
-
-<!-- VALIDATE FORM -->
-<%= simple_form_for @certificate do |f| %>
-  <%= f.input :template_name, as: :hidden %>
-  <%= f.submit %>
-<% end %>
-
   <!-- TEMPLATES -->
 <div class="container template-container">
   <div class="row">
@@ -115,20 +108,73 @@
           <% end %>
         </div>
       <% end %>
+   <% elsif @certificate.occasion == "Un baptême" %>
+      <% Certificate::TEMPLATE_BAPTEME.each do |template_name| %>
+        <div class="col-xs-3">
+          <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+            <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+          <% end %>
+        </div>
+      <% end %>
+   <% elsif @certificate.occasion == "Un mariage" %>
+      <% Certificate::TEMPLATE_MARIAGE.each do |template_name| %>
+        <div class="col-xs-3">
+          <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+            <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+          <% end %>
+        </div>
+      <% end %>
+   <% elsif @certificate.occasion == "Noël" %>
+      <% Certificate::TEMPLATE_NOEL.each do |template_name| %>
+        <div class="col-xs-3">
+          <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+            <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+          <% end %>
+        </div>
+      <% end %>
+   <% elsif @certificate.occasion == "Dire merci" %>
+      <% Certificate::TEMPLATE_MERCI.each do |template_name| %>
+        <div class="col-xs-3">
+          <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+            <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+          <% end %>
+        </div>
+      <% end %>
 
     <% end %>
   </div>
 </div>
 
+
+<!-- VALIDATE FORM -->
+<div class="container btn-certificate-container">
+<%= simple_form_for @certificate do |f| %>
+  <%= f.input :template_name, as: :hidden %>
+  <%= f.submit value: "Valider et commander", class: "btn btn-info btn-large-container"; %>
+<% end %>
+</div>
+
 <!-- LINKS -->
-<div class="container">
+<div class="container ">
   <div style="text-align: center">
     <h2 style="color: white, background-color: $green""> <%= link_to "See the location and the current weather on the plantation", "/certificates/#{@id}" %> </h2>
   </div>
 </div>
 </div>
 
-
+<% content_for :after_js do %>
+  <script>
+    $(document).ready(function() {
+      $('#modify-certificate-date').click(function() {
+        $('.datepicker').datepicker({
+          format: 'dd/mm/yyyy',
+          weekStart: 1,
+          language: 'fr'
+        });
+      });
+    });
+  </script>
+<% end %>
 
 
 

@@ -40,9 +40,14 @@ class CertificatesController < ApplicationController
           @certificate.template_name = Certificate::TEMPLATE_NAISSANCE.first
        elsif @certificate.occasion == "Noël"
           @certificate.template_name = Certificate::TEMPLATE_NOEL.first
+       elsif @certificate.occasion == "Un baptême"
+          @certificate.template_name = Certificate::TEMPLATE_BAPTEME.first
+       elsif @certificate.occasion == "Un mariage"
+          @certificate.template_name = Certificate::TEMPLATE_MARIAGE.first
+       elsif @certificate.occasion == "Dire merci"
+          @certificate.template_name = Certificate::TEMPLATE_MERCI.first
         end
-        # kevin @certificates.users
-        # add user2
+
         @certificate.save
         redirect_to edit_certificate_path(@certificate)
     end
@@ -60,7 +65,6 @@ class CertificatesController < ApplicationController
     else
       flash[:alert] = @certificate.errors.full_messages.join(', ')
     end
-    redirect_to edit_certificate_path(@certificate)
   end
 
   private

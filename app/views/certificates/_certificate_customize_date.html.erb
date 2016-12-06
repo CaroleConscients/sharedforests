@@ -4,11 +4,9 @@
   title="Modifier la date du cadeau"
   data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
-    <%= f.text_field :date, class: "datepicker" %>
-    <%= f.submit value: "ok" %>
+    <%= f.text_field :date, as: :date, value: Date.today.strftime('%e-%m-%Y'), order: [:day, :month, :year], class: "datepicker" %>
+    <%= f.button :submit, value: "ok", class: "certificate-submit-btn", data: {disable_with: "ok"} %>
   <% end %>'></i></span>
-
-
 
 
 
