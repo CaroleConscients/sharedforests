@@ -1,6 +1,12 @@
 class CertificatesController < ApplicationController
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "AH-PE- PARCEL UNIQUE NUMBER plus AT PARCEL CERTIFICATE (id certificate en cours) UNIQUE NUMBER CALCULE"   # Excluding ".pdf" extension.
+      end
+    end
     @certificate = Certificate.find(params[:id])
     @latitude = @certificate.parcel.latitude
     @longitude = @certificate.parcel.longitude
