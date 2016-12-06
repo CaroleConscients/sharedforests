@@ -3,5 +3,7 @@ window.globe = function globe(){
 }
 
 $(function() {
-  globe();
+  if ( $("#cesiumContainer").length > 0 ) {
+    globe();
+  }
 })
