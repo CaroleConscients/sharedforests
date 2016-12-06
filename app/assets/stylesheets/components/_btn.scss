@@ -8,6 +8,19 @@
     margin-top: 25px;
 }
 
+.btn-green-sign {
+  background-color: $green;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  font-size: 12px;
+  margin-top: 13px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+}
 
 .btn-certificate-tree-number-update {
     height: 77px;
