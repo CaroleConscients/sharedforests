@@ -33,8 +33,21 @@ class CertificatesController < ApplicationController
         @parcel = @parcels.first
         @certificate.parcel = @parcel
         @certificate.users << current_user
-        # kevin @certificates.users
-        # add user2
+
+        if @certificate.occasion == "Un anniversaire"
+          @certificate.template_name = Certificate::TEMPLATE_ANNIVERSAIRE.first
+       elsif @certificate.occasion == "Une naissance"
+          @certificate.template_name = Certificate::TEMPLATE_NAISSANCE.first
+       elsif @certificate.occasion == "Noël"
+          @certificate.template_name = Certificate::TEMPLATE_NOEL.first
+       elsif @certificate.occasion == "Un baptême"
+          @certificate.template_name = Certificate::TEMPLATE_BAPTEME.first
+       elsif @certificate.occasion == "Un mariage"
+          @certificate.template_name = Certificate::TEMPLATE_MARIAGE.first
+       elsif @certificate.occasion == "Dire merci"
+          @certificate.template_name = Certificate::TEMPLATE_MERCI.first
+        end
+
         @certificate.save
         redirect_to edit_certificate_path(@certificate)
     end
@@ -61,7 +74,7 @@ class CertificatesController < ApplicationController
   end
 
   def certificate_params
-    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity)
+    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity, :template_name)
   end
 
 end

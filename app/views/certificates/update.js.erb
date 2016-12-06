@@ -13,6 +13,16 @@
   $('[data-toggle="popover"').popover({html: true});
 <% end %>
 
+$(document).ready(function() {
+  $('#modify-certificate-date').click(function() {
+    $('.datepicker').datepicker({
+      format: 'dd/mm/yyyy',
+      weekStart: 1,
+      language: 'fr'
+    });
+  });
+});
+
 // v1
  // $(".edit-certificate-name").addClass('hidden');
  //  $(".certificate-attribution-name").removeClass('hidden').
@@ -22,13 +32,3 @@
  // $(".edit-certificate-date").addClass('hidden');
  //  $(".certificate-date-choosen").removeClass('hidden').
  //    html('<%#= @certificate.date %><i class="fa fa-plus-circle" id="modify-certificate-date"></i>');
-
-
-
-
-
-
-
-
-
-
