@@ -306,8 +306,9 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 // CUSTOM TEMPLATES
 .template-container {
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   margin-top: 40px;
+  padding: 0 108px;
 }
 
 .template-thumbnail {

@@ -33,6 +33,14 @@ class CertificatesController < ApplicationController
         @parcel = @parcels.first
         @certificate.parcel = @parcel
         @certificate.users << current_user
+
+        if @certificate.occasion == "Un anniversaire"
+          @certificate.template_name = Certificate::TEMPLATE_ANNIVERSAIRE.first
+       elsif @certificate.occasion == "Une naissance"
+          @certificate.template_name = Certificate::TEMPLATE_NAISSANCE.first
+       elsif @certificate.occasion == "Noël"
+          @certificate.template_name = Certificate::TEMPLATE_NOEL.first
+        end
         # kevin @certificates.users
         # add user2
         @certificate.save
@@ -52,6 +60,7 @@ class CertificatesController < ApplicationController
     else
       flash[:alert] = @certificate.errors.full_messages.join(', ')
     end
+    redirect_to edit_certificate_path(@certificate)
   end
 
   private
@@ -61,7 +70,7 @@ class CertificatesController < ApplicationController
   end
 
   def certificate_params
-    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity)
+    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity, :template_name)
   end
 
 end

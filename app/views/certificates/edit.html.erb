@@ -2,7 +2,7 @@
 <div class="container">
       <h1 style="text-align: center;">Offer a tree</h1>
       <!-- BEGINNING BORDER AND LAYOUT -->
-      <div class="certificate-border">
+      <div id="certificate" class="certificate-border certificate-<%= @certificate.template_name %>">
         <div class="certificate-layout">
 
         <!-- TOP - CERTIFICATE HEADERS -->
@@ -15,7 +15,7 @@
           </div>
 
           <!-- BANNER - CERTIFICATE BANNER -->
-          <div class="certificate-banner" style="background-image: url('<%= image_url("templates/banner_yoghiros.png")%>');"> </div>
+          <div class="certificate-banner" <% if @certificate.template_name.nil? %> style="background-image: url('<%= image_url("templates/banner_yoghiros.png")%>');" <%end %> > </div>
 
           <!-- BOTTOM TEXT           -->
           <div class="certificate-description">
@@ -81,15 +81,41 @@
 </div>
 <!-- END CONTAINER 1 -->
 
+
+<!-- VALIDATE FORM -->
+<%= simple_form_for @certificate do |f| %>
+  <%= f.input :template_name, as: :hidden %>
+  <%= f.submit %>
+<% end %>
+
   <!-- TEMPLATES -->
-<div class="template-container">
+<div class="container template-container">
   <div class="row">
-    <% Certificate::TEMPLATES.each do |template_name| %>
-      <div class="col-xs-3">
-        <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
-          <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
-        <% end %>
-      </div>
+    <% if @certificate.occasion == "Un anniversaire" %>
+      <% Certificate::TEMPLATE_ANNIVERSAIRE.each do |template_name| %>
+        <div class="col-xs-3">
+          <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+            <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+          <% end %>
+        </div>
+      <% end %>
+   <% elsif @certificate.occasion == "Une naissance" %>
+      <% Certificate::TEMPLATE_NAISSANCE.each do |template_name| %>
+        <div class="col-xs-3">
+          <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+            <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+          <% end %>
+        </div>
+    <% end %>
+   <% elsif @certificate.occasion == "Noël" %>
+      <% Certificate::TEMPLATE_NOEL.each do |template_name| %>
+        <div class="col-xs-3">
+          <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+            <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+          <% end %>
+        </div>
+      <% end %>
+
     <% end %>
   </div>
 </div>

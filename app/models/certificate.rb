@@ -1,5 +1,8 @@
 class Certificate < ApplicationRecord
-  TEMPLATES = ["naissance", "bapteme_rose", "joyeux_noel_rouge", "noel_foret_sapins", "bon_anniversaire"]
+  TEMPLATE_ANNIVERSAIRE = ["bon_anniversaire"]
+  TEMPLATE_NAISSANCE = ["naissance"]
+  TEMPLATE_NOEL = ["joyeux_noel_rouge", "noel_foret_sapins"]
+  # TEMPLATES = ["naissance", "bapteme_rose", "joyeux_noel_rouge", "noel_foret_sapins", "bon_anniversaire"]
   OCCASIONS = ["Un anniversaire", "Une naissance", "Une baptême", "Un mariage", "Noël", "Dire merci", "Faire plaisir", "Une occasion personnelle"]
 
   belongs_to :parcel
