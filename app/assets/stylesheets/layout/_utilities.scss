@@ -23,3 +23,9 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+.vertical-banner {
+  background-image: asset-url('alto-h.jpg');
+  background-size: cover;
+  height: calc(100vh - 70px);
+}
