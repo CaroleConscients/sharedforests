@@ -1,7 +1,7 @@
 <span class="certificate-date-choosen"> <%= I18n.transliterate(l @certificate.date, format: "%-d %B %Y").upcase %>
 <i class="fa fa-plus-circle" id="modify-certificate-date"
   data-toggle="popover"
-  title="Changez la date du cadeau"
+  title="Modifier la date du cadeau"
   data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
     <%= f.text_field :date, class: "datepicker" %>

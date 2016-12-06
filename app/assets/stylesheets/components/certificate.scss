@@ -1,3 +1,48 @@
+// POPOVER
+.popover.right {
+    margin-left: 10px;
+    // background-color: $yellow;
+    background-color: white;
+    border-radius: 10px;
+    // border: 1px solid $green;
+}
+.popover-title {
+    margin: 0;
+    padding: 8px 20px;
+    font-size: 16px;
+    // background-color: $yellow;
+    background-color: white;
+    // color: white;
+    color: $green;
+    border: none;
+}
+.popover.right > .arrow:after {
+    content: " ";
+    left: 1px;
+    bottom: -10px;
+    border-left-width: 0;
+    // border-right-color: $yellow;
+    border-right-color: white;
+}
+label {
+    // color: white;
+    color: $green;
+    font-family: muli;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    appearance: button;
+    cursor: pointer;
+    background-color: $green;
+    border-radius: 5px;
+    /* border: 1px solid wheat; */
+    color: white;
+    align: right;
+    font-family: "Muli", sans-serif;
+    // position: relative;
+    // left: 175px;
+}
+// CERTIFICATE START
 .certificate-border {
   border-top: 14px solid $green;
   border-right: 14px solid $green;
@@ -260,8 +305,9 @@
 
 // CUSTOM TEMPLATES
 .template-container {
-  margin-left: 211px;
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
 }
 
 .template-thumbnail {
@@ -270,14 +316,18 @@
 }
 
 // CERTIF NAISSANCE
+.certificate-naissance {
   .certificate-banner {
     background-image: asset-url("templates/banner_naissance.png");
   }
+}
 
  // CERTIF BAPTEME ROSE
+ .certificate-bapteme_rose {
   .certificate-banner {
     background-image: asset-url("templates/banner_bapteme_rose.png");
   }
+}
 
 // CERTIF JOYEUX NOEL ROUGE
 .certificate-joyeux_noel_rouge {
@@ -318,9 +368,51 @@
   }
 }
 
+// CERTIF NOEL FORET SAPINS
+.certificate-noel_foret_sapins {
+  border-top: 14px solid #40566B;
+  border-right: 14px solid #40566B;
+  border-left: 14px solid #40566B;
+  border-bottom: 57px solid #40566B;
 
+  .certificate-banner {
+    background-image: asset-url("templates/banner_noel_foret_sapins.png");
+  }
 
+  .certificate-headers-content .headers-title-colored {
+    color: #40566B;
+  }
 
+  .certificate-number .certificate-number-info {
+    color: #40566B;
+  }
+
+  .certificate-tree-quantity {
+    color: #40566B;
+  }
+
+  .certificate-attribution-name {
+    color: #40566B;
+  }
+
+  .certificate-attribution-message {
+    color: #40566B;
+  }
+
+  .certificate-date .certificate-date-choosen {
+    color: #40566B;
+  }
+  .year {
+    color: #4a71a5;
+  }
+}
+
+// BON ANNIVERSAIRE
+.certificate-bon_anniversaire {
+  .certificate-banner {
+    background-image: asset-url("templates/banner_bon_anniversaire.png");
+  }
+}
 
 
 

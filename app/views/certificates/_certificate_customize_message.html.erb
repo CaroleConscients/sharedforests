@@ -1,7 +1,7 @@
 <%= @certificate.message %>
 <i class="fa fa-plus-circle" id="modify-certificate-name"
   data-toggle="popover"
-  title="Changez le message"
+  title="Modifier le message"
   data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
     <%= f.input :message %>
