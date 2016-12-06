@@ -1,20 +1,23 @@
+<!-- <div class="wrapper" style="background: linear-gradient(to left, #ECE9E6 , #FFFFFF);">> -->
 <div class="container">
       <h1 style="text-align: center;">Offer a tree</h1>
-<!-- BEGINNING BORDER AND LAYOUT -->
+      <!-- BEGINNING BORDER AND LAYOUT -->
       <div class="certificate-border">
         <div class="certificate-layout">
-<!-- LEFT - CERTIFICATE PERSONAL INFO -->
-<!-- TOP - CERTIFICATE HEADERS -->
+
+        <!-- TOP - CERTIFICATE HEADERS -->
           <div class="certificate-headers">
             <div class="certificate-headers-content">
-              <div class= "headers-logo" style="background-image: url('<%= image_url("logo-top-certif.png") %>');"> </div>
-              <div class= "headers-title">CERTIFICAT DE PLANTATION D'ARBRES</div>
+              <div class= "headers-logo" style="background-image: url('<%= image_url("logo-top-certif.png") %>');"></div>
+              <div class= "headers-title">CERTIFICAT DE <span class="headers-title-colored">PLANTATION D'ARBRES</span></div>
               <div class= "headers-sub-title">PROJET ALTO HUAYABAMBA, AMAZONIE, PEROU</div>
             </div>
           </div>
-<!-- BANNER - CERTIFICATE BANNER -->
-          <div class="certificate-banner" style="background-image: url('<%= image_url("banner_yoghiros.png")%>');"> </div>
-<!-- BOTTOM TEXT           -->
+
+          <!-- BANNER - CERTIFICATE BANNER -->
+          <div class="certificate-banner" style="background-image: url('<%= image_url("templates/banner_yoghiros.png")%>');"> </div>
+
+          <!-- BOTTOM TEXT           -->
           <div class="certificate-description">
             <div class="certificate-general-text">
               CONSCIENTS s'engage pour la reforestation avec PUR PROJET, un collectif qui développe et suit des programmes
@@ -26,21 +29,17 @@
             </div>
             <div class="text-signature">Les équipes CONSCIENTS et PUR PROJET</div>
 
+            <!-- CERTIFICATE DATE -->
             <div class="certificate-date">
               <div class="full-date">
                 <%= render 'certificate_customize_date' %>
-<!--                 DATE: <span class="certificate-date-choosen"> <%#= I18n.transliterate(l @certificate.date, format: "%-d %B %Y").upcase %> <i class="fa fa-plus-circle" id="modify-certificate-date"></i></span>
-                <%#= simple_form_for @certificate, remote: true do |f| %>
-                  <%#= f.text_field :date, class: "datepicker" %>
-                  <%#= f.submit value: "ok" %>
-                <%# end %> -->
-
               </div>
-
+              <!-- CERTIFICATE BOTTOM LOGO DESCRIPTION COLIBRI ETC -->
               <div class="end-bottom-text">Conscients soutient les programmes de reforestation de Pur Projet, une entreprise Colibris, signataire de la charte de compensation volontaire de l'Ademe et partenaire de la campagne Plantons pour la Planète</div>
               <div class="logo-bottom" style="background-image: url('<%= image_url("logo-bottom-certificate.png")%>');"></div>
             </div>
           </div>
+            <!-- LEFT - CERTIFICATE PERSONAL INFO -->
           <div class="certificate-personal-info">
             <div class="certificate-number">
               <div class="certificate-number-text">CERTIFICAT N°</div>
@@ -73,21 +72,37 @@
               Producteur : GENRY VALLES PANDURO
             </div>
           </div>
-<!-- BOTTOM STAMP -->
+          <!-- BOTTOM STAMP AND TL SIGN-->
           <div class="certificate-stamp-sign" style="background-image: url('<%= image_url("tampon_signature.png")%>');"></div>
           <div class="year">2016</div>
         </div>
       </div>
 <!-- END BORDER AND LAYOUT       -->
 </div>
+<!-- END CONTAINER 1 -->
+
+  <!-- TEMPLATES -->
+<div class="template-container">
+  <div class="row">
+    <% Certificate::TEMPLATES.each do |template_name| %>
+      <div class="col-xs-3">
+        <%= link_to "##{template_name}", data: { name: template_name }, class: "template-link" do %>
+          <%= image_tag "templates/thumbnail_#{template_name}.jpg", class: "template-thumbnail" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- LINKS -->
+<div class="container">
   <div style="text-align: center">
     <h2 style="color: white, background-color: $green""> <%= link_to "See the location and the current weather on the plantation", "/certificates/#{@id}" %> </h2>
   </div>
 </div>
-
-<div class="container">
-  <%#= form.for @designs do |d| %>
 </div>
+
+
 
 
 
