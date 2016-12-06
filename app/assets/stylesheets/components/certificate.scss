@@ -156,6 +156,9 @@
       font-size: 22px;
       letter-spacing: 0.4px;
     }
+    .headers-title-colored {
+      color: $green;
+    }
     .headers-sub-title {
       color: $gray;
       font-family: 'Muli', sans-serif;
@@ -250,6 +253,83 @@
     bottom: -46px;
     font-family: "Signika", sans-serif;
     font-size: 40px;
-    color: #68aa8c;
+    // color: #68aa8c;
+    color: #67dbbc;
 }
+
+
+// CUSTOM TEMPLATES
+.template-container {
+  margin-left: 211px;
+  margin-top: 10px;
+}
+
+.template-thumbnail {
+  width: 225px;
+  height: 100%;
+}
+
+// CERTIF NAISSANCE
+  .certificate-banner {
+    background-image: asset-url("templates/banner_naissance.png");
+  }
+
+ // CERTIF BAPTEME ROSE
+  .certificate-banner {
+    background-image: asset-url("templates/banner_bapteme_rose.png");
+  }
+
+// CERTIF JOYEUX NOEL ROUGE
+.certificate-joyeux_noel_rouge {
+  border-top: 14px solid #3192b8;
+  border-right: 14px solid #3192b8;
+  border-left: 14px solid #3192b8;
+  border-bottom: 57px solid #3192b8;
+
+  .certificate-banner {
+    background-image: asset-url("templates/banner_joyeux_noel_rouge.png");
+  }
+
+  .certificate-headers-content .headers-title-colored {
+    color: #fc010d;
+  }
+
+  .certificate-number .certificate-number-info {
+    color: #fc010d;
+  }
+
+  .certificate-tree-quantity {
+    color: #fc010d;
+  }
+
+  .certificate-attribution-name {
+    color: #fc010d;
+  }
+
+  .certificate-attribution-message {
+    color: #fc010d;
+  }
+
+  .certificate-date .certificate-date-choosen {
+    color: #fc010d;
+  }
+  .year {
+    color: #89cae7;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

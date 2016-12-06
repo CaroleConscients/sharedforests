@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130144156) do
+ActiveRecord::Schema.define(version: 20161206095609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,13 @@ ActiveRecord::Schema.define(version: 20161130144156) do
     t.text     "message"
     t.datetime "date"
     t.integer  "trees_quantity"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "occasion"
     t.string   "users"
+    t.string   "template_name"
+    t.string   "template_border_color"
+    t.string   "template_text_color"
     t.index ["parcel_id"], name: "index_certificates_on_parcel_id", using: :btree
   end
 
