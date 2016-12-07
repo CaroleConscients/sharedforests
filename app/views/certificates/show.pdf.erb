@@ -10,11 +10,11 @@
        <!-- BEGINNING BORDER AND LAYOUT -->
       <div id="certificate" class="certificate-border certificate-<%= @certificate.template_name %>">
         <div class="certificate-layout">
-
         <!-- TOP - CERTIFICATE HEADERS -->
           <div class="certificate-headers">
             <div class="certificate-headers-content">
-              <div class= "headers-logo" style="background-image: url('<%= image_url("logo-top-certif.png") %>');"></div>
+               <div class= "headers-logo" style="background-image: url('<%= image_url("logo-top-certif.png") %>');"></div>
+
               <div class= "headers-title">CERTIFICAT DE <span class="headers-title-colored">PLANTATION D'ARBRES</span></div>
               <div class= "headers-sub-title">PROJET ALTO HUAYABAMBA, AMAZONIE, PEROU</div>
             </div>
@@ -22,6 +22,10 @@
 
           <!-- BANNER - CERTIFICATE BANNER -->
           <div class="certificate-banner" <% if @certificate.template_name.nil? %> style="background-image: url('<%= image_url("templates/banner_yoghiros.png")%>');" <%end %> > </div>
+
+
+
+
 
           <!-- BOTTOM TEXT           -->
           <div class="certificate-description">
@@ -54,8 +58,6 @@
             <div class="certificate-tree-quantity">
               <div id="certificate-tree-quantity-content">
                 <%= pluralize_upcase(@certificate.trees_quantity, "arbre") %>
-
-
               </div>
             </div>
             <div class="certificate-personal-info-logo" style="background-image: url('<%= image_url("logopp-transparent.png") %>');"></div>
@@ -64,14 +66,10 @@
 
               <div class="certificate-attribution-perso-box">
                 <div class="certificate-attribution-name">
-
-
-
-
+                  <%= @certificate.name.upcase %>
                 </div>
                 <div class="certificate-attribution-message">
-
-
+                  <%= @certificate.message %>
               </div>
             </div>
             <div class="certificate-parcel-info">
@@ -92,16 +90,6 @@
 <!-- END BORDER AND LAYOUT       -->
 </div>
 <!-- END CONTAINER 1 -->
-
-
-
-
-
-
-
-
-
-
     </div>
   </body>
 </html>

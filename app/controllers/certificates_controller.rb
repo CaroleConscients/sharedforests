@@ -21,7 +21,9 @@ class CertificatesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "#{@certificate.unique_number}-#{@certificate.name.parameterize}" # Excluding ".pdf" extension.
+        render pdf: "#{@certificate.unique_number}-#{@certificate.name.parameterize}", # Excluding ".pdf" extension.
+               orientation: 'Landscape',
+               # page_width:  927
       end
     end
   end
