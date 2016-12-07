@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206095609) do
+ActiveRecord::Schema.define(version: 20161207102449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "certificates", force: :cascade do |t|
-    t.integer  "unique_number"
+    t.string   "unique_number"
     t.integer  "parcel_id"
     t.string   "name"
     t.text     "message"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20161206095609) do
   end
 
   create_table "parcels", force: :cascade do |t|
-    t.integer  "unique_number"
+    t.string   "unique_number"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "farmer_name"
