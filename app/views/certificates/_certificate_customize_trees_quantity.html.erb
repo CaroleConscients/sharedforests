@@ -1,4 +1,4 @@
-<%= @certificate.trees_quantity %> ARBRE
+<%= pluralize_upcase(@certificate.trees_quantity, "arbre") %>
 <i class="fa fa-plus-circle" id="modify-trees-quantity-button"
   data-toggle="popover"
   title="Modifier la quantité d'arbre"
