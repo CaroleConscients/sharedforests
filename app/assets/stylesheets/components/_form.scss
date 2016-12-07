@@ -7,6 +7,10 @@
 }
 
 
+#certificate_name::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #f7f4ed;
+}
+
 #new_certificate {
 
   label {
@@ -29,7 +33,7 @@
 
   optgroup, select {
     width: 100%;
-    color: white;
+    color: #f7f4ed;
     font-style: italic;
     margin: 0;
     border-bottom: 3px dashed #FADD93;
@@ -55,7 +59,7 @@
     border-radius: none;
     box-shadow: none;
     // font-style: italic;
-    color: white;
+    color: #f7f4ed;
     font-style: italic;
     input, textarea {
       width: 100%;

@@ -1,0 +1,83 @@
+// Graphical variables
+@import "config/variables";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-datepicker";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Components
+@import "components/certificate";
+
+// PDF Specific
+.certificate-noel_foret_sapins {
+  .certificate-banner {
+    background-image: asset-data-url("templates/banner_noel_foret_sapins.png");
+  }
+}
+
+.certificate-bon_anniversaire {
+  .certificate-banner {
+    background-image: asset-data-url("templates/banner_bon_anniversaire.png");
+  }
+}
+
+.certificate-mariage {
+  .certificate-banner {
+    background-image: asset-data-url("templates/banner_mariage.png");
+  }
+}
+
+.certificate-MERCI {
+  .certificate-banner {
+    background-image: asset-data-url("templates/banner_merci.png");
+  }
+}
+
+.certificate-headers-content {
+  position: absolute;
+  top: 9px;
+  margin-left: 256px;
+    .headers-sub-title {
+      color: $gray;
+      font-family: 'Muli', sans-serif;
+      font-size: 15px;
+      letter-spacing: -0.8px;
+      margin-left: 120px;
+      width: 370px;
+    }
+}
+
+.certificate-parcel-info {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top : 1px dotted $gray;
+  padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  color: $gray;
+  font-family: 'Muli', sans-serif;
+  font-size: 11px;
+  letter-spacing: -1px;
+  text-align: center;
+  // margin-right: 9px;
+  // margin-left: 9px;
+  line-height: 14px;
+  margin-top: 95px;
+  margin-left: -210px
+}
+
+.certificate-stamp-sign {
+    // background-color: red;
+    position: absolute;
+    background-size: cover;
+    width: 178px;
+    height: 129px;
+    left: 650px;
+    // right: 32px;
+    bottom: -30px;
+}

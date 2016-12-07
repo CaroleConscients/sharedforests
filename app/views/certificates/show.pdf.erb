@@ -21,10 +21,11 @@
           </div>
 
           <!-- BANNER - CERTIFICATE BANNER -->
-          <div class="certificate-banner" <% if @certificate.template_name.nil? %> style="background-image: url('<%= image_url("templates/banner_yoghiros.png")%>');" <%end %> > </div>
+<!--           <div class="certificate-banner" <%# if @certificate.template_name.nil? %> style="background-image: url('<%#= image_url("templates/banner_yoghiros.png")%>');" <%#end %> > </div> -->
 
+          <div class="certificate-banner" <% if @certificate.template_name.nil? %> style="background-image: url('<%= image_url 'templates/banner_yoghiros.png' %>');" <%end %> > </div>
 
-
+      <%#= wicked_pdf_image_tag 'templates/banner_yoghiros.png' %>
 
 
           <!-- BOTTOM TEXT           -->
