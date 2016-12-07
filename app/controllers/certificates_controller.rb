@@ -100,7 +100,7 @@ class CertificatesController < ApplicationController
   end
 
   def certificate_params
-    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity, :template_name)
+    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity, :template_name, :giver)
   end
 
 end
