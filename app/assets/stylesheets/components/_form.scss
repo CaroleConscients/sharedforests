@@ -11,6 +11,9 @@
   color: #f7f4ed;
 }
 
+#certificate_giver::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #f7f4ed;
+}
 #new_certificate {
 
   label {

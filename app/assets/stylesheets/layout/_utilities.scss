@@ -40,11 +40,98 @@
 }
 
 .mongradient {
-  height: 100%;
+  // height: 100%;
+  height: 700px;
   background-color: red;
   background-image:
     radial-gradient(
       white,
-      #fcf9fa 30%
+      // #fcf9fa 30%
+      #f7f4f5 30%
     );
+}
+
+.greentext {
+  color: $green;
+}
+
+.whitetext {
+  color: white;
+}
+
+.yellowtext {
+  color: $yellow;
+}
+.smallp {
+    font-size: 13px;
+    line-height: 20px;
+    // padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.greenbehind {
+  background-color: $green;
+  padding-top: 20px;
+}
+
+.greenbordernoright {
+    border-right: none;
+    border-top: 1px dotted $green;
+    border-bottom: 1px dotted $green;
+    border-left: 1px dotted $green;
+    // height: 472px;
+    padding-right: 15px;
+    background-color: white;
+    height: 450px;
+}
+
+.greenborder {
+    border-right: 1px dotted $green;
+    border-top: 1px dotted $green;
+    border-bottom: 1px dotted $green;
+    border-left: 1px dotted $green;
+    padding-right: 15px;
+    background-color: white;
+    height: 75px;
+}
+
+.sameheight {
+  height: 450px;
+}
+
+.showimage {
+  // background-size: cover;
+  // height: 758px;
+  // width: 82%;
+  background-size: cover;
+  height: 375px;
+  width: 50%;
+}
+
+.homecover{
+background-size: cover;
+}
+
+.topright {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.changefa {
+    color: $yellow;
+    position: absolute;
+    right: 10px;
+    font-size: 30px;
+    bottom: 24px;
+}
+
+.fontfa a{
+    color: $yellow;
+    font-family: "Muli", sans-serif;
+    text-align: right;
+    position: relative;
+    top: 45px;
+    // right: 33px;
+    right: -45px;
 }
