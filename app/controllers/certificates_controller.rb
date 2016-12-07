@@ -17,6 +17,15 @@ class CertificatesController < ApplicationController
     @weather_temp = @weather_json["main"]["temp"]/10
     @weather_humidity = @weather_json["main"]["humidity"]
     @icon = "Tree-icon.png"
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@certificate.unique_number}-#{@certificate.name.parameterize}", # Excluding ".pdf" extension.
+               orientation: 'Landscape',
+               # page_width:  927
+      end
+    end
   end
 
   def new
@@ -60,10 +69,27 @@ class CertificatesController < ApplicationController
 
   def update
     @certificate = Certificate.find(params[:id])
-    if @certificate.update(certificate_params)
+
+    # TODO: move to payment
+    if @certificate.unique_number.nil?
+      # AH-PE- PARCEL UNIQUE NUMBER plus AT PARCEL CERTIFICATE (id certificate en cours) UNIQUE NUMBER CALCULE
+      number = @certificate.parcel.tree_quantity - @certificate.parcel.tree_quantity_remaining + 1
+      number_code = number.to_s.rjust(3, "0")
+
+      @certificate.unique_number = "#{@certificate.parcel.unique_number}-#{number_code}"
+    end
+
+    @certificate.assign_attributes(certificate_params)
+
+    if @certificate.save
       flash[:alert] = nil
     else
       flash[:alert] = @certificate.errors.full_messages.join(', ')
+    end
+
+    respond_to do |format|
+      format.html { redirect_to edit_certificate_path(@certificate) }
+      format.js
     end
   end
 

@@ -5,10 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Cleaning database..."
+Certificate.destroy_all
 Parcel.destroy_all
 
-Parcel.create!({
-  unique_number: 21559,
+puts "Creating parcels..."
+parcel = Parcel.create!({
+  unique_number: "AH-PE-12345",
   latitude: -6.482427,
   longitude: -76.375666,
   farmer_name: "Genry Valles Panduro",
@@ -17,12 +20,15 @@ Parcel.create!({
   tree_species: "Capirona"
   })
 
+puts "Creating certificates..."
 Certificate.create! ({
-  parcel_id: 2,
+  parcel: parcel,
   name: "papa",
-  message: "merci"
+  message: "merci",
+  trees_quantity: 2
   })
 
+puts "Finished!"
 # Parcel.create!({
 #   unique_number:
 #   latitude:
