@@ -22,7 +22,7 @@ class CertificatesController < ApplicationController
       format.html
       format.pdf do
         render pdf: "#{@certificate.unique_number}-#{@certificate.name.parameterize}", # Excluding ".pdf" extension.
-               orientation: 'Landscape',
+               orientation: 'Landscape'
                # page_width:  927
       end
     end
@@ -88,7 +88,7 @@ class CertificatesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to edit_certificate_path(@certificate) }
+      format.html { redirect_to new_certificate_payment_path(@certificate) }
       format.js
     end
   end

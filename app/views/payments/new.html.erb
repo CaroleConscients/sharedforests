@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h1>Payer</h1>
+
+      <%= simple_form_for :payment, url: certificate_payments_path(@certificate), method: :post do |f| %>
+        <%= f.input :card_number %>
+        <%= f.input :expiration_month %>
+        <%= f.input :expiration_year %>
+        <%= f.input :code %>
+        <%= f.submit "Payer"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
