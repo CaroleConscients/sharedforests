@@ -88,7 +88,7 @@ class CertificatesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to edit_certificate_path(@certificate) }
+      format.html { redirect_to new_certificate_payment_path(@certificate) }
       format.js
     end
   end
