@@ -1,4 +1,7 @@
 <p> test affichage </p>
+<p> <%= @certificates %> </p>
+<p> <%= @certificates.each do |certificate|    %>
+<p> <%= 
 
 <div id="cesiumContainer" style="width: 100%; height: 100%;"></div>
 
@@ -6,9 +9,8 @@
   <script>
     function globe(){
       var viewer = new Cesium.Viewer('cesiumContainer');
-      
       var entity = viewer.entities.add({
-            position : Cesium.Cartesian3.fromDegrees(-74.1,-2.1833300),
+            position : Cesium.Cartesian3.fromDegrees(-76.70769,7.12839),
             model: {
               uri : '/assets/Cesium/Assets/Schefflera.glb'
             },
@@ -32,64 +34,7 @@
         "id" : "point 1",
         "name": "point",
         "position" : {
-          "cartographicDegrees" : [-74.1, -2.1833300, 0]
-        },
-        "point": {
-          "color": {
-            "rgba": [255, 255, 255, 255]
-          },
-          "outlineColor": {
-            "rgba": [255, 0, 0, 255]
-          },
-          "outlineWidth" : 4,
-          "pixelSize": 20
-        }
-      }];
-      var dataSource = Cesium.CzmlDataSource.load(czml);
-      viewer.dataSources.add(dataSource);
-      viewer.zoomTo(dataSource);
-
-
-
-    }
-
-    $(function() {
-      globe();
-    });
-  </script>
-<% end %>
-
-<%= content_for(:after_js) do %>
-  <script>
-    function globe(){
-      var viewer = new Cesium.Viewer('cesiumContainer');
-      
-      var entity = viewer.entities.add({
-            position : Cesium.Cartesian3.fromDegrees(<% cerficate.parcel.longitude %>,<% cerficate.parcel.latitude %>),
-            model: {
-              uri : '/assets/Cesium/Assets/Schefflera.glb'
-            },
-            billboard: { 
-             image : '/assets/Cesium/Assets/logo.png',
-             horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
-             verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-             pixelOffset : new Cesium.Cartesian2(0.0,100),
-             pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.0),
-             translucencyByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.1) 
-           }}
-          );
-      viewer.trackedEntity = entity; 
-      var czml = [
-        {
-        "id" : "document",
-        "name" : "CZML Point",
-        "version" : "1.0"
-        }, 
-        {
-        "id" : "point 1",
-        "name": "point",
-        "position" : {
-          "cartographicDegrees" : [-74.1, -2.1833300, 0]
+          "cartographicDegrees" : [-76.70769, 7.12839, 0]
         },
         "point": {
           "color": {
