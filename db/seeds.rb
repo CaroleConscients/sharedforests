@@ -12,11 +12,23 @@ User.destroy_all
 Certificate.destroy_all
 Parcel.destroy_all
 
+puts "Creating users..."
+
+User.create!({
+  email: "Carole@carole.com",
+  password: "Carole15"
+  })
+
+User.create!({
+  email: "Alain@alain.com",
+  password: "Alain15"
+  })
+
 puts "Creating parcels..."
 
 Parcel.create!({
   unique_number: "AH-PE-12345",
-  latitude: 7.12839,
+  latitude: -7.12839,
   longitude: -76.70769,
   farmer_name: "Juan Bautista Palacios Camizan",
   tree_quantity: 100,
@@ -26,7 +38,7 @@ Parcel.create!({
 
 Parcel.create!({
   unique_number: "AH-PE-12345",
-  latitude: 6.482427,
+  latitude: -6.482427,
   longitude: -76.375666,
   farmer_name: "Genry Valles Panduro",
   tree_quantity: 100,
@@ -69,7 +81,7 @@ Certificate.create! ({
   })
 
 Certificate.create! ({
-  parcel: parcel,
+  parcel_id: 2,
   name: "papa",
   message: "merci",
   trees_quantity: 1,
