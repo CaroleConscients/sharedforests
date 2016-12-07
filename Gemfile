@@ -21,6 +21,8 @@ gem 'gmaps4rails'
 gem 'httparty'
 
 gem 'rails-i18n', '~> 5.0.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'binding_of_caller'

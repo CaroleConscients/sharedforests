@@ -34,7 +34,6 @@ Parcel.create!({
   tree_species: "Capirona"
   })
 
-
 puts "Creating certificates..."
 
 Certificate.create! ({
@@ -70,7 +69,7 @@ Certificate.create! ({
   })
 
 Certificate.create! ({
-  parcel_id: 2,
+  parcel: parcel,
   name: "papa",
   message: "merci",
   trees_quantity: 1,
@@ -80,8 +79,9 @@ Certificate.create! ({
   parcel_id: 2,
   name: "maman",
   message: "merci",
-  trees_quantity: 1,
+  trees_quantity: 2
   })
+
 # Parcel.create!({
 #   unique_number:
 #   latitude:

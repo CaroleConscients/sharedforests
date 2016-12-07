@@ -17,6 +17,15 @@ class CertificatesController < ApplicationController
     @weather_temp = @weather_json["main"]["temp"]/10
     @weather_humidity = @weather_json["main"]["humidity"]
     @icon = "Tree-icon.png"
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@certificate.unique_number}-#{@certificate.name.parameterize}", # Excluding ".pdf" extension.
+               orientation: 'Landscape',
+               # page_width:  927
+      end
+    end
   end
 
   def new
@@ -33,8 +42,21 @@ class CertificatesController < ApplicationController
         @parcel = @parcels.first
         @certificate.parcel = @parcel
         @certificate.users << current_user
-        # kevin @certificates.users
-        # add user2
+
+        if @certificate.occasion == "Un anniversaire"
+          @certificate.template_name = Certificate::TEMPLATE_ANNIVERSAIRE.first
+       elsif @certificate.occasion == "Une naissance"
+          @certificate.template_name = Certificate::TEMPLATE_NAISSANCE.first
+       elsif @certificate.occasion == "Noël"
+          @certificate.template_name = Certificate::TEMPLATE_NOEL.first
+       elsif @certificate.occasion == "Un baptême"
+          @certificate.template_name = Certificate::TEMPLATE_BAPTEME.first
+       elsif @certificate.occasion == "Un mariage"
+          @certificate.template_name = Certificate::TEMPLATE_MARIAGE.first
+       elsif @certificate.occasion == "Dire merci"
+          @certificate.template_name = Certificate::TEMPLATE_MERCI.first
+        end
+
         @certificate.save
         redirect_to edit_certificate_path(@certificate)
     end
@@ -47,10 +69,27 @@ class CertificatesController < ApplicationController
 
   def update
     @certificate = Certificate.find(params[:id])
-    if @certificate.update(certificate_params)
+
+    # TODO: move to payment
+    if @certificate.unique_number.nil?
+      # AH-PE- PARCEL UNIQUE NUMBER plus AT PARCEL CERTIFICATE (id certificate en cours) UNIQUE NUMBER CALCULE
+      number = @certificate.parcel.tree_quantity - @certificate.parcel.tree_quantity_remaining + 1
+      number_code = number.to_s.rjust(3, "0")
+
+      @certificate.unique_number = "#{@certificate.parcel.unique_number}-#{number_code}"
+    end
+
+    @certificate.assign_attributes(certificate_params)
+
+    if @certificate.save
       flash[:alert] = nil
     else
       flash[:alert] = @certificate.errors.full_messages.join(', ')
+    end
+
+    respond_to do |format|
+      format.html { redirect_to edit_certificate_path(@certificate) }
+      format.js
     end
   end
 
@@ -61,7 +100,7 @@ class CertificatesController < ApplicationController
   end
 
   def certificate_params
-    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity)
+    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity, :template_name)
   end
 
 end

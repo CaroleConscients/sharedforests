@@ -5,5 +5,5 @@
   data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
     <%= f.input :message %>
-    <%= f.submit value: "ok" %>
+    <%= f.button :submit, value: "ok", class: "certificate-submit-btn", data: {disable_with: "ok"} %>
   <% end %>'></i>

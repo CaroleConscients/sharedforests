@@ -1,9 +1,9 @@
-<%= @certificate.trees_quantity %> ARBRE
+<%= pluralize_upcase(@certificate.trees_quantity, "arbre") %>
 <i class="fa fa-plus-circle" id="modify-trees-quantity-button"
   data-toggle="popover"
   title="Modifier la quantité d'arbre"
   data-container=".certificate-layout"
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
       <%= f.input :trees_quantity, label: false %>
-      <%= f.submit value: "ok"%>
+      <%= f.button :submit, value: "ok", class: "certificate-submit-btn", data: {disable_with: "ok"} %>
     <% end %>'></i>
