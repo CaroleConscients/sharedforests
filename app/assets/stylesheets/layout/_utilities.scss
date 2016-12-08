@@ -29,9 +29,10 @@
 }
 
 .vertical-banner {
-  background-image: asset-url('alto-h.jpg');
+  background-image: asset-url('alto-h.jpg'), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.3) 50%);
   background-size: cover;
-  height: calc(100vh - 70px);
+  // height: calc(100vh - 70px);
+
 }
 
 .on-the-right {
@@ -62,6 +63,15 @@
 
 .whitetext {
   color: white;
+}
+
+.muliwhitetext{
+  text-align: center;
+  color: white;
+  font-family: "Muli", sans-serif;
+  font-size: 30px;
+  line-height: 25px;
+  width: 70%;
 }
 
 .yellowtext {
