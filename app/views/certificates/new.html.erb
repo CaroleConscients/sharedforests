@@ -1,5 +1,8 @@
+<div class="wrapper mongradient">
+
 <div class="container">
-  <h1 style="text-align: center;">Plant a tree</h1>
+  <!-- <h1 style="text-align: center;">Plant a tree</h1> -->
+  <h4 class="paddedlight" style="color: #78c8a4; text-align: center;"> A qui allez-vous offrir un arbre aujourd'hui ?</h4>
 
   <div class="container-form">
     <%= form_for @certificate, html: { class: 'form-horizontal' } do |f| %>
@@ -15,19 +18,17 @@
       <div class="form-group">
         <label for="" class="control-label col-sm-3">Destinataire </label>
         <div class="col-sm-9">
-          <%= f.text_field :name, class: "form-control"%>
-          <!-- AVEC PLACEHOLDER -->
-          <%#= f.text_field :name, placeholder: "Prénom et nom de la personne à qui vous offrez l'arbre", class: "form-control"%>
+          <%= f.text_field :name, class: "form-control", placeholder: "Edward & Kevin"%>
         </div>
       </div>
 
-          <!-- EMAIL USER 2 -->
-<!-- <div class="form-group">
+
+      <div class="form-group">
         <label for="" class="control-label col-sm-3">Email du destinataire </label>
         <div class="col-sm-9">
-          <%#= f.text_field :email, placeholder: "Email de la personne à qui vous offrez l'arbre", class: "form-control"%> email_field("user", "address")
+          <%= f.text_field :email, class: "form-control"%>
         </div>
-      </div> -->
+      </div>
 
       <div class="form-group">
         <label for="" class="control-label col-sm-3">A quelle occasion ?</label>
@@ -40,6 +41,13 @@
         <label for="" class="control-label col-sm-3">Date du cadeau</label>
         <div class="col-sm-9">
           <%= f.text_field :date, as: :date, value: Date.today.strftime('%e-%m-%Y'), order: [:day, :month, :year], class: "form-control datepicker"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="control-label col-sm-3">De la part de  </label>
+        <div class="col-sm-9">
+          <%= f.text_field :giver, class: "form-control", placeholder: "Tonton et tata"%>
         </div>
       </div>
 
@@ -60,4 +68,5 @@
   </div>
 </div>
 
+</div>
 

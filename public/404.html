@@ -51,17 +51,69 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .errorcover {
+    background-size: cover;
+    width: 100%;
+  }
+
+  .bannerimageerror {
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bannerimageerror h1 {
+    font- family: "Muli", sans-serif;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+  .bannerimageerror p {
+    font- family: "Muli", sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.btn-medium {
+  color: white;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: lighter;
+}
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+
+<div class="bannerimageerror" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.3) 50%), url('paysage-error.jpg');">
+  <div class="banner-content">
+    <h1>Oooops...cette page s'est cachée</h1>
+    <p>Profitez-en pour faire une pause :)</p>
+    <a class="btn btn-medium">J'ai fini ma pause</a>
   </div>
+</div>
+
+
+
+
+
+  <!-- This file lives in public/404.html -->
+
+
 </body>
 </html>

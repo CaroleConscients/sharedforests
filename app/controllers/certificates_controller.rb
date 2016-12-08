@@ -55,6 +55,8 @@ class CertificatesController < ApplicationController
           @certificate.template_name = Certificate::TEMPLATE_MARIAGE.first
        elsif @certificate.occasion == "Dire merci"
           @certificate.template_name = Certificate::TEMPLATE_MERCI.first
+       elsif @certificate.occasion == "Faire plaisir"
+          @certificate.template_name = Certificate::TEMPLATE_FAIRE_PLAISIR.first
         end
 
         @certificate.save
@@ -88,7 +90,7 @@ class CertificatesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to edit_certificate_path(@certificate) }
+      format.html { redirect_to new_certificate_payment_path(@certificate) }
       format.js
     end
   end
@@ -100,7 +102,7 @@ class CertificatesController < ApplicationController
   end
 
   def certificate_params
-    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity, :template_name)
+    params.require(:certificate).permit(:name, :occasion, :message, :date, :trees_quantity, :template_name, :giver)
   end
 
 end

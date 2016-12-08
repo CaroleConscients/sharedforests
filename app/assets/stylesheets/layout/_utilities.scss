@@ -10,6 +10,10 @@
   padding-bottom: 5em;
 }
 
+.paddedlight {
+  padding-top: 20px;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -25,9 +29,10 @@
 }
 
 .vertical-banner {
-  background-image: asset-url('alto-h.jpg');
+  background-image: asset-url('alto-h.jpg'), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.3) 50%);
   background-size: cover;
-  height: calc(100vh - 70px);
+  // height: calc(100vh - 70px);
+
 }
 
 .on-the-right {
@@ -36,5 +41,96 @@
 }
 
 .btn-large-container {
-  width: 100%;
+  width: 30%;
 }
+
+.mongradient {
+  padding-bottom: 30px;
+  // height: 100%;
+  // min-height: 700px;
+  background-color: red;
+  background-image:
+    radial-gradient(
+      white,
+      // #fcf9fa 30%
+      #f7f4f5 30%
+    );
+}
+
+.greentext {
+  color: $green;
+}
+
+.whitetext {
+  color: white;
+}
+
+.muliwhitetext{
+  text-align: center;
+  color: white;
+  font-family: "Muli", sans-serif;
+  font-size: 30px;
+  line-height: 25px;
+  width: 70%;
+}
+
+.yellowtext {
+  color: $yellow;
+}
+.smallp {
+    font-size: 13px;
+    line-height: 20px;
+    // padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.greenbehind {
+  background-color: $green;
+  padding-top: 20px;
+}
+
+.greenbordernoright {
+    border-right: none;
+    border-top: 1px dotted $green;
+    border-bottom: 1px dotted $green;
+    border-left: 1px dotted $green;
+    // height: 472px;
+    padding-right: 15px;
+    background-color: white;
+    height: 450px;
+}
+
+.greenborder {
+    border-right: 1px dotted $green;
+    border-top: 1px dotted $green;
+    border-bottom: 1px dotted $green;
+    border-left: 1px dotted $green;
+    padding-right: 15px;
+    background-color: white;
+    height: 75px;
+}
+
+.sameheight {
+  height: 450px;
+}
+
+.showimage {
+  // background-size: cover;
+  // height: 758px;
+  // width: 82%;
+  background-size: cover;
+  height: 375px;
+  width: 50%;
+}
+
+.homecover{
+background-size: cover;
+}
+
+.topright {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+

@@ -6,6 +6,10 @@
     border-radius: 5px;
     color: white;
     margin-top: 25px;
+    &:hover {
+      color: white;
+      background: lighten(#FAD578, 10%);
+    }
 }
 
 .btn-green-sign {
@@ -74,6 +78,22 @@
     left: -67px;
 }
 
+.btn-treehouse {
+  width: 200px;
+  font-family: "Muli", sans-serif;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $green;
+  transition: background 0.3s ease;
+}
+.btn-treehouse:hover {
+  opacity: 1;
+  background: $yellow;
+  text-decoration: none;
+  color: white;
+}
 // transform: rotate(180deg) scale(1, 1);
 
 

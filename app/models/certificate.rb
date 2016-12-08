@@ -1,14 +1,14 @@
 class Certificate < ApplicationRecord
-  TEMPLATE_ANNIVERSAIRE = ["bon_anniversaire"]
-  TEMPLATE_NAISSANCE = ["naissance"]
-  TEMPLATE_BAPTEME = ["bapteme_rose", "bapteme_bleu"]
-  TEMPLATE_MARIAGE = ["mariage"]
-  TEMPLATE_NOEL = ["joyeux_noel_rouge", "noel_foret_sapins"]
-  TEMPLATE_MERCI = ["merci"]
-  # TEMPLATE_FAIRE_PLAISIR = []
+  TEMPLATE_ANNIVERSAIRE = ["bon_anniversaire", "amazonie"]
+  TEMPLATE_NAISSANCE = ["naissance", "amazonie", "yoghiros"]
+  TEMPLATE_BAPTEME = ["bapteme_rose", "bapteme_bleu", "amazonie"]
+  TEMPLATE_MARIAGE = ["mariage", "amazonie"]
+  TEMPLATE_NOEL = ["joyeux_noel_rouge", "noel_foret_sapins", "noel_yoghiros"]
+  TEMPLATE_MERCI = ["merci", "amazonie", "love"]
+  TEMPLATE_FAIRE_PLAISIR = ["amazonie","love"]
   # TEMPLATE_OCCASION_PERSONNELLE
-  # TEMPLATES = ["naissance", "bapteme_rose", "joyeux_noel_rouge", "noel_foret_sapins", "bon_anniversaire"]
-  OCCASIONS = ["Un anniversaire", "Une naissance", "Un baptême", "Un mariage", "Noël", "Dire merci", "Faire plaisir", "Une occasion personnelle"]
+  OCCASIONS = ["Un anniversaire", "Une naissance", "Un baptême", "Un mariage", "Noël", "Dire merci", "Faire plaisir"]
+  # , "Une occasion personnelle"
 
   belongs_to :parcel
   has_many :user_certificates, dependent: :destroy
