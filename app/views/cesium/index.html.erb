@@ -1,14 +1,12 @@
-<p> test affichage </p>
-<p> <%= @certificates %> </p>
-<!-- <%#= @certificates.each do |certificate|    %> -->
-
-
+<h2 style="text-align: center"> THE SHARED FOREST </h2>
 <div id="cesiumContainer" style="width: 100%; height: 100%;"></div>
 
 <%= content_for(:after_js) do %>
   <script>
     function globe(){
-      var viewer = new Cesium.Viewer('cesiumContainer');
+      var viewer = new Cesium.Viewer('cesiumContainer', {
+        baseLayerPicker : false
+      });
       <% @certificates.each do |certificate| %>
         var posit2 = {};
         var posit = Cesium.Cartesian3.fromDegrees(<%= certificate.parcel.longitude %>,<%= certificate.parcel.latitude %>);
@@ -17,7 +15,8 @@
           var entity = viewer.entities.add({
               position : posit2,
               model: {
-                uri : '/assets/Cesium/Assets/Schefflera.glb'
+                uri : '/assets/Cesium/Assets/Schefflera.glb', 
+                scale: 2.0
               },
               name: "arbre de <%= certificate.name %>",
               description: "<%= certificate.message %> http://localhost:3000/certificates/<%= certificate.id %>",
@@ -36,6 +35,10 @@
 
         viewer.trackedEntity = entity;
       <% end %>
+
+      setTimeout(function(){
+        viewer.camera.flyTo({ destination : Cesium.Cartesian3.fromDegrees(-76.70769, -7.12839, 25000.0) })
+      }, 5000);
       var entity = viewer.entities.add({
               name: "Plantation de Ramundo",
               polygon: {
@@ -45,7 +48,7 @@
                     -76.708154, -7.128904,
                     -76.709024, -7.128405
                     ]),
-                material : Cesium.Color.GREEN.withAlpha(0.2),
+                material : Cesium.Color.GREEN.withAlpha(0.5),
                 outline : true,
                 outlineColor : Cesium.Color.BLACK
              }
@@ -76,6 +79,19 @@
       }];
       var dataSource = Cesium.CzmlDataSource.load(czml);
       viewer.dataSources.add(dataSource);
+
+      var layers = viewer.imageryLayers;
+      var weathermap = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+                url : 'https://mesonet.agron.iastate.edu/cgi-bin/wms/goes/conus_ir.cgi?',
+                layers : 'goes_conus_ir',
+                credit : 'Infrared data courtesy Iowa Environmental Mesonet',
+                parameters : {
+                    transparent : 'true',
+                    format : 'image/png'
+                }
+            }));
+      weathermap.alpha = 0.3;
+      weathermap.brightness = 2.0;
 
       var dataSource2 = Cesium.KmlDataSource.load('/assets/Cesium/Assets/Schefflera.glb', {
           stroke: Cesium.Color.HOTPINK,

@@ -2,66 +2,81 @@ $(document).ready(function() {
   $("#plant1").hover(
     function(event) {
       $('#central').css({
-        "background-image": "url('<%= image_url "1-plant-a-tree.png" %>')"
-    });
+        "background-image": "url('<%= image_url "1-plant-a-tree.png" %>')",
+        });
+      $('#plant1').addClass('hover');
     },
     function(event) {
-      $('#central').css({"background-image": "url('<%= image_url "pp-fleuve-plant.png" %>')"});
-      $('#plant1').css({
-        "color": "$green"
-    });
+      $('#central').css({"background-image": "url('<%= image_url "pp-fleuve-plant.png" %>')",
+        "background-size": "cover"});
+      $('#plant1').removeClass('hover');
     }
   );
-});
 
-$(document).ready(function() {
   $("#offer1").hover(
     function(event) {
       $('#central').css({
         "background-image": "url('<%= image_url "2-offer-it.png" %>')",
         "background-size": "cover"
       });
+      $('#offer1').addClass('hover');
     },
     function(event) {
       $('#central').css({
         "background-image": "url('<%= image_url "pp-fleuve-plant.png" %>')",
         "background-size": "cover"
       });
+      $('#offer1').removeClass('hover');
     }
   );
-});
 
-$(document).ready(function() {
   $("#grow1").hover(
     function(event) {
       $('#central').css({
         "background": "url('<%= image_url "4-grow-my-forest.png" %>')",
         "background-size": "cover"
-
     });
+      $('#grow1').addClass('hover');
     },
     function(event) {
       $('#central').css({
         "background-image": "url('<%= image_url "pp-fleuve-plant.png" %>')",
         "background-size": "cover"
       });
+      $('#grow1').removeClass('hover');
     }
   );
-});
 
-$(document).ready(function() {
   $("#share1").hover(
     function(event) {
       $('#central').css({
         "background": "url('<%= image_url "3-start-forest.png" %>')",
         "background-size": "cover"
     });
+      $('#share1').addClass('hover');
     },
     function(event) {
       $('#central').css({
         "background-image": "url('<%= image_url "pp-fleuve-plant.png" %>')"
-
     });
+      $('#share1').removeClass('hover');
     }
   );
+
+  var selectors = ["#plant1", "#offer1", "#share1", "#grow1"]
+  var currentIndex = 0;
+
+  $(selectors[currentIndex]).mouseenter();
+
+  var interval = setInterval(function() {
+    $(".hover").removeClass("hover");
+    $(selectors[currentIndex]).mouseenter();
+
+    if (currentIndex <= selectors.length) {
+      currentIndex++;
+    } else {
+      // currentIndex = 0;
+      clearInterval(interval);
+    }
+  }, 2000);
 });
