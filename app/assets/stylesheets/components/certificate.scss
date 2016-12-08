@@ -336,6 +336,50 @@
       }
     }
 
+// CERTIF YOGHIROS
+  .certificate-yoghiros {
+    border-top: 14px solid #31B8AA;
+    border-right: 14px solid #31B8AA;
+    border-left: 14px solid #31B8AA;
+    border-bottom: 57px solid #31B8AA;
+
+    .certificate-banner {
+      background-image: asset-url("templates/banner_yoghiros.png");
+    }
+
+    .certificate-headers-content .headers-title-colored {
+      color: #31B8AA;
+    }
+
+    .certificate-number .certificate-number-info {
+      color: #31B8AA;
+    }
+
+    .certificate-tree-quantity {
+      color: #31B8AA;
+    }
+
+    .certificate-attribution-name {
+      color: #31B8AA;
+    }
+
+    .certificate-attribution-message {
+      color: #31B8AA;
+    }
+
+    .certificate-date .certificate-date-choosen {
+      color: #31B8AA;
+    }
+
+    .btn-edit {
+      color: #F8EF5F;
+    }
+
+    .year {
+      color: #00CABA;
+    }
+  }
+
 // CERTIF BAPTEME ROSE
   .certificate-bapteme_rose {
     .certificate-banner {

@@ -1,6 +1,6 @@
 class Certificate < ApplicationRecord
   TEMPLATE_ANNIVERSAIRE = ["bon_anniversaire", "amazonie"]
-  TEMPLATE_NAISSANCE = ["naissance", "amazonie"]
+  TEMPLATE_NAISSANCE = ["naissance", "amazonie", "yoghiros"]
   TEMPLATE_BAPTEME = ["bapteme_rose", "bapteme_bleu", "amazonie"]
   TEMPLATE_MARIAGE = ["mariage", "amazonie"]
   TEMPLATE_NOEL = ["joyeux_noel_rouge", "noel_foret_sapins", "noel_yoghiros"]
