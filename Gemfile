@@ -25,6 +25,10 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
