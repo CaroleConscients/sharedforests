@@ -1,299 +1,312 @@
 // POPOVER
-.popover.right {
-    margin-left: 10px;
-    // background-color: $yellow;
+  .popover.right {
+      margin-left: 10px;
+      // background-color: $yellow;
+      background-color: white;
+      border-radius: 10px;
+      // border: 1px solid $green;
+  }
+  .popover-title {
+      margin: 0;
+      padding: 8px 20px;
+      font-size: 16px;
+      // background-color: $yellow;
+      background-color: white;
+      // color: white;
+      color: $green;
+      border: none;
+  }
+  .popover.right > .arrow:after {
+      content: " ";
+      left: 1px;
+      bottom: -10px;
+      border-left-width: 0;
+      // border-right-color: $yellow;
+      border-right-color: white;
+  }
+
+// BUTTONS
+  .certificate-submit-btn {
+    background-color: $green;
+    border-radius: 5px;
+    color: white;
+    font-family: "Muli", sans-serif;
+  }
+  // BTN END
+  .btn-certificate-container {
+    padding: 0 120px;
+    font-family: "Muli", sans-serif;
+  }
+
+  // BTN EDIT
+  .btn-edit {
+    font-size: 25px;
+    color: $red;
+  }
+
+// CERTIFICATE BORDER AND LAYOUT
+  .certificate-border {
+    border-top: 14px solid $green;
+    border-right: 14px solid $green;
+    border-left: 14px solid $green;
+    border-bottom: 57px solid $green;
+    height: 609px;
+    width: 927px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .certificate-layout {
+    position: relative;
+    height: 538px;
+    width: 899px;
     background-color: white;
+  }
+
+// LEFT BOX WITH RADIUS - CERTIFICATE PERSONAL INFO
+  .certificate-personal-info {
+    height: 480px;
+    width: 220px;
+    background-color: white;
+    opacity: 0.9;
+    border: 1px solid $green;
     border-radius: 10px;
-    // border: 1px solid $green;
-}
-.popover-title {
-    margin: 0;
-    padding: 8px 20px;
-    font-size: 16px;
-    // background-color: $yellow;
-    background-color: white;
-    // color: white;
+    position: absolute;
+    top: 48px;
+    left: 36px;
+  }
+
+  .certificate-number {
+    width: 100%;
+    height: 25px;
+    margin-top: 10px;
+    .certificate-number-text {
+      color: $gray;
+      font-family: 'Muli', sans-serif;
+      font-size: 12px;
+      // margin-top: 10px;
+      margin-left: 10px;
+      text-align: start;
+      margin-left: 10px;
+      position: relative;
+    }
+    .certificate-number-info {
+      color: $green;
+      font-family: 'Muli', sans-serif;
+      font-size: 12px;
+      // margin-top: -16px;
+      text-align: end;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .certificate-tree-quantity {
+    // width: 100%;
     color: $green;
-    border: none;
-}
-.popover.right > .arrow:after {
-    content: " ";
-    left: 1px;
-    bottom: -10px;
-    border-left-width: 0;
-    // border-right-color: $yellow;
-    border-right-color: white;
-}
+    font-family: 'Muli', sans-serif;
+    font-size: 20px;
+    text-align: end;
+    margin-right: 10px;
+  }
 
-.certificate-submit-btn {
-  background-color: $green;
-  border-radius: 5px;
-  color: white;
-  font-family: "Muli", sans-serif;
-}
-// CERTIFICATE START
-.certificate-border {
-  border-top: 14px solid $green;
-  border-right: 14px solid $green;
-  border-left: 14px solid $green;
-  border-bottom: 57px solid $green;
-  height: 609px;
-  width: 927px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .certificate-personal-info-logo {
+    background-size: cover;
+    height: 100px;
+    width: 100%;
+    margin-top: 42px;
+  }
 
-.certificate-layout {
-  position: relative;
-  height: 538px;
-  width: 899px;
-  background-color: white;
-}
-
-// LEFT - CERTIFICATE PERSONAL INFO
-.certificate-personal-info {
-  height: 480px;
-  width: 220px;
-  background-color: white;
-  opacity: 0.9;
-  border: 1px solid $green;
-  border-radius: 10px;
-  position: absolute;
-  top: 48px;
-  left: 36px;
-}
-
-.certificate-number {
-  width: 100%;
-  height: 25px;
-  margin-top: 10px;
-  .certificate-number-text {
+  .certificate-attribution-title {
+    width: 100%;
     color: $gray;
     font-family: 'Muli', sans-serif;
     font-size: 12px;
-    // margin-top: 10px;
-    margin-left: 10px;
-    text-align: start;
-    margin-left: 10px;
-    position: relative;
+    margin-top: 38px;
+    text-align: center;
   }
-  .certificate-number-info {
+
+  .certificate-attribution-perso {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    .certificate-attribution-perso-box {
+      width: 100%;
+    }
+  }
+
+  .certificate-attribution-name {
+    width: 100%;
+    color: $green;
+    font-family: 'Muli', sans-serif;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .certificate-attribution-message {
+    width: 95%;
+    line-height: 15px;
     color: $green;
     font-family: 'Muli', sans-serif;
     font-size: 12px;
-    // margin-top: -16px;
-    text-align: end;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    font-style: italic;
+    text-align: center;
+    // margin-left: 10px;
+    // margin-right: 10px;
+    // padding-bottom: 8px;
   }
-}
 
-
-.certificate-tree-quantity {
-  // width: 100%;
-  color: $green;
-  font-family: 'Muli', sans-serif;
-  font-size: 20px;
-  text-align: end;
-  margin-right: 10px;
-}
-
-.certificate-personal-info-logo {
-  background-size: cover;
-  height: 100px;
-  width: 100%;
-  margin-top: 42px;
-}
-
-.certificate-attribution-title {
-  width: 100%;
-  color: $gray;
-  font-family: 'Muli', sans-serif;
-  font-size: 12px;
-  margin-top: 38px;
-  text-align: center;
-}
-
-.certificate-attribution-perso {
-  height: 85px;
-  display: flex;
-  align-items: center;
-  .certificate-attribution-perso-box {
-    width: 100%;
+  .certificate-parcel-info {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top : 1px dotted $gray;
+    padding-top: 10px;
+    width: 90%;
+    margin: auto;
+    color: $gray;
+    font-family: 'Muli', sans-serif;
+    font-size: 11px;
+    letter-spacing: -1px;
+    text-align: center;
+    // margin-right: 9px;
+    // margin-left: 9px;
+    line-height: 14px;
+    margin-top: 8px;
   }
-}
-
-.certificate-attribution-name {
-  width: 100%;
-  color: $green;
-  font-family: 'Muli', sans-serif;
-  font-size: 20px;
-  text-align: center;
-}
-
-.certificate-attribution-message {
-  width: 95%;
-  line-height: 15px;
-  color: $green;
-  font-family: 'Muli', sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  text-align: center;
-  // margin-left: 10px;
-  // margin-right: 10px;
-  // padding-bottom: 8px;
-}
-
-.certificate-parcel-info {
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-top : 1px dotted $gray;
-  padding-top: 10px;
-  width: 90%;
-  margin: auto;
-  color: $gray;
-  font-family: 'Muli', sans-serif;
-  font-size: 11px;
-  letter-spacing: -1px;
-  text-align: center;
-  // margin-right: 9px;
-  // margin-left: 9px;
-  line-height: 14px;
-  margin-top: 8px;
-}
 
 // TOP - CERTIFICATE HEADER
-.certificate-headers {
-  height: 127px;
-  width: 899px;
-  background-color: white;
-  // position: relative;
-}
-
-.certificate-headers-content {
-  position: absolute;
-  top: 9px;
-  margin-left: 256px;
-    .headers-logo {
-      background-size: cover;
-      height: 48px;
-      width : 142px;
-      margin-left: 205px;
-    }
-    .headers-title {
-      color: $gray;
-      font-family: 'Muli', sans-serif;
-      margin-top: 12px;
-      margin-left: 65px;
-      font-size: 22px;
-      letter-spacing: 0.4px;
-    }
-    .headers-title-colored {
-      color: $green;
-    }
-    .headers-sub-title {
-      color: $gray;
-      font-family: 'Muli', sans-serif;
-      font-size: 15px;
-      letter-spacing: -0.8px;
-      margin-left: 125px;
-    }
-}
-
-
-// BANNER - CERTIFICATE BANNER
-.certificate-banner {
-  background-size: cover;
-  height: 162px;
-  width: 900px;
-  // background-color: purple;
-}
-
-// BOTTOM - CERTIFICATE BOTTOM TEXTE
-.certificate-description {
-  height: 231px;
-  width: 900px;
-  background-color: white;
-}
-
-.certificate-general-text {
-  margin-left: 282px;
-  margin-top: 20px;
-  margin-right: 30px;
-  text-align: justify;
-  color : #A8A8A7;
-  font-family: 'Cantata', serif;
-  font-size: 12px;
-  line-height: 14px;
-}
-
-.text-signature{
-  color : #A8A8A7;
-  font-family: 'Cantata', serif;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: end;
-  margin-right: 30px;
-}
-
-.certificate-date {
-  margin-left: 282px;
-  // margin-top: 10px;
-  width: 100%;
-  height: 24px;
-  font-family: 'Muli', sans-serif;
-  font-size: 12px;
-  color: #A8A8A7;
-  .certificate-date-choosen {
-      color: $green;
-      top: 425px;
-      right: 459px;
+  .certificate-headers {
+    height: 127px;
+    width: 899px;
+    background-color: white;
+    // position: relative;
   }
-}
 
-.end-bottom-text {
+  .certificate-headers-content {
+    position: absolute;
+    top: 9px;
+    margin-left: 256px;
+      .headers-logo {
+        background-size: cover;
+        height: 48px;
+        width : 142px;
+        margin-left: 205px;
+      }
+      .headers-title {
+        color: $gray;
+        font-family: 'Muli', sans-serif;
+        margin-top: 12px;
+        margin-left: 65px;
+        font-size: 22px;
+        letter-spacing: 0.4px;
+      }
+      .headers-title-colored {
+        color: $green;
+      }
+      .headers-sub-title {
+        color: $gray;
+        font-family: 'Muli', sans-serif;
+        font-size: 15px;
+        letter-spacing: -0.8px;
+        margin-left: 125px;
+      }
+  }
+
+
+// BANNER - CERTIFICATE IMAGE BANNER
+  .certificate-banner {
+    background-size: cover;
+    height: 162px;
+    width: 900px;
+    // background-color: purple;
+  }
+
+// BOTTOM - CERTIFICATE BOTTOM TEXT AND DATE
+  .certificate-description {
+    height: 231px;
+    width: 900px;
+    background-color: white;
+  }
+
+  .certificate-general-text {
+    margin-left: 282px;
+    margin-top: 20px;
+    margin-right: 30px;
     text-align: justify;
-    color: #C4C4C2;
+    color : #A8A8A7;
     font-family: 'Cantata', serif;
-    font-size: 9px;
-    margin-right: 557px;
-    margin-top: 10px;
-    line-height: 10px;
-}
+    font-size: 12px;
+    line-height: 14px;
+  }
 
-.logo-bottom {
-    width: 20%;
-    height: 36px;
-    margin-top: 13px;
-}
+  .text-signature{
+    color : #A8A8A7;
+    font-family: 'Cantata', serif;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: end;
+    margin-right: 30px;
+  }
+
+  .certificate-date {
+    margin-left: 282px;
+    // margin-top: 10px;
+    width: 100%;
+    height: 24px;
+    font-family: 'Muli', sans-serif;
+    font-size: 12px;
+    color: #A8A8A7;
+    .certificate-date-choosen {
+        color: $green;
+        top: 425px;
+        right: 459px;
+    }
+  }
+
+  .end-bottom-text {
+      text-align: justify;
+      color: #C4C4C2;
+      font-family: 'Cantata', serif;
+      font-size: 9px;
+      margin-right: 557px;
+      margin-top: 10px;
+      line-height: 10px;
+  }
+
+  .logo-bottom {
+      width: 20%;
+      height: 36px;
+      margin-top: 13px;
+  }
 
 // BOTTOM RIGHT STAMP AND SIGNATURE
-.certificate-stamp-sign {
-    // background-color: red;
-    position: absolute;
-    background-size: cover;
-    width: 178px;
-    height: 129px;
-    right: 32px;
-    bottom: -30px;
-}
+  .certificate-stamp-sign {
+      // background-color: red;
+      position: absolute;
+      background-size: cover;
+      width: 178px;
+      height: 129px;
+      right: 32px;
+      bottom: -30px;
+  }
 
-.year {
-    position: absolute;
-    width: 178px;
-    height: 44px;
-    left: 2px;
-    bottom: -46px;
-    font-family: "Signika", sans-serif;
-    font-size: 40px;
-    // color: #68aa8c;
-    color: #67dbbc;
-}
+// BOTTOM INFO INSIDE BORDER
+  .year {
+      position: absolute;
+      width: 178px;
+      height: 44px;
+      left: 2px;
+      bottom: -46px;
+      font-family: "Signika", sans-serif;
+      font-size: 40px;
+      // color: #68aa8c;
+      color: #67dbbc;
+  }
 
 
-// CUSTOM TEMPLATES
+/////// CUSTOM CERTIF TEMPLATES CONTAINER AND THUMBNAIL SIZE
   .template-container {
     padding: 25px 108px 25px 108px;
   }
@@ -303,168 +316,213 @@
     height: 100%;
   }
 
-// CERTIF NAISSANCE
-.certificate-naissance {
-  .certificate-banner {
-    background-image: asset-url("templates/banner_naissance.png");
-  }
+// CERTIF AMAZONIE
+  .certificate-amazonie {
+    .certificate-banner {
+      background-image: asset-url("templates/banner_amazonie.png");
+    }
     .btn-edit {
-    color: red;
-  }
-}
-
- // CERTIF BAPTEME ROSE
- .certificate-bapteme_rose {
-  .certificate-banner {
-    background-image: asset-url("templates/banner_bapteme_rose.png");
-  }
-      .btn-edit {
-    color: #d87974;
+      color: #a24d4c;
+    }
   }
 
-}
+// CERTIF NAISSANCE
+    .certificate-naissance {
+      .certificate-banner {
+        background-image: asset-url("templates/banner_naissance.png");
+      }
+        .btn-edit {
+        color: red;
+      }
+    }
 
- // CERTIF BAPTEME BLEU
- .certificate-bapteme_bleu {
-  .certificate-banner {
-    background-image: asset-url("templates/banner_bapteme_bleu.png");
+// CERTIF BAPTEME ROSE
+  .certificate-bapteme_rose {
+    .certificate-banner {
+      background-image: asset-url("templates/banner_bapteme_rose.png");
+    }
+    .btn-edit {
+      color: #d87974;
+    }
   }
-      .btn-edit {
-    color: #8ac9e7;
-  }
-}
+
+// CERTIF BAPTEME BLEU
+     .certificate-bapteme_bleu {
+      .certificate-banner {
+        background-image: asset-url("templates/banner_bapteme_bleu.png");
+      }
+          .btn-edit {
+        color: #8ac9e7;
+      }
+    }
+
 // CERTIF JOYEUX NOEL ROUGE
-.certificate-joyeux_noel_rouge {
-  border-top: 14px solid #3192b8;
-  border-right: 14px solid #3192b8;
-  border-left: 14px solid #3192b8;
-  border-bottom: 57px solid #3192b8;
+  .certificate-joyeux_noel_rouge {
+    border-top: 14px solid #3192b8;
+    border-right: 14px solid #3192b8;
+    border-left: 14px solid #3192b8;
+    border-bottom: 57px solid #3192b8;
 
-  .certificate-banner {
-    background-image: asset-url("templates/banner_joyeux_noel_rouge.png");
-  }
+    .certificate-banner {
+      background-image: asset-url("templates/banner_joyeux_noel_rouge.png");
+    }
 
-  .certificate-headers-content .headers-title-colored {
-    color: #fc010d;
-  }
+    .certificate-headers-content .headers-title-colored {
+      color: #fc010d;
+    }
 
-  .certificate-number .certificate-number-info {
-    color: #fc010d;
-  }
+    .certificate-number .certificate-number-info {
+      color: #fc010d;
+    }
 
-  .certificate-tree-quantity {
-    color: #fc010d;
-  }
+    .certificate-tree-quantity {
+      color: #fc010d;
+    }
 
-  .certificate-attribution-name {
-    color: #fc010d;
-  }
+    .certificate-attribution-name {
+      color: #fc010d;
+    }
 
-  .certificate-attribution-message {
-    color: #fc010d;
-  }
+    .certificate-attribution-message {
+      color: #fc010d;
+    }
 
-  .certificate-date .certificate-date-choosen {
-    color: #fc010d;
-  }
+    .certificate-date .certificate-date-choosen {
+      color: #fc010d;
+    }
 
-  .btn-edit {
-    color: #3192b8;
-  }
+    .btn-edit {
+      color: #3192b8;
+    }
 
-  .year {
-    color: #89cae7;
+    .year {
+      color: #89cae7;
+    }
   }
-}
 
 // CERTIF NOEL FORET SAPINS
-.certificate-noel_foret_sapins {
-  border-top: 14px solid #40566B;
-  border-right: 14px solid #40566B;
-  border-left: 14px solid #40566B;
-  border-bottom: 57px solid #40566B;
+  .certificate-noel_foret_sapins {
+    border-top: 14px solid #40566B;
+    border-right: 14px solid #40566B;
+    border-left: 14px solid #40566B;
+    border-bottom: 57px solid #40566B;
 
-  .certificate-banner {
-    background-image: asset-url("templates/banner_noel_foret_sapins.png");
+    .certificate-banner {
+      background-image: asset-url("templates/banner_noel_foret_sapins.png");
+    }
+
+    .certificate-headers-content .headers-title-colored {
+      color: #40566B;
+    }
+
+    .certificate-number .certificate-number-info {
+      color: #40566B;
+    }
+
+    .certificate-tree-quantity {
+      color: #40566B;
+    }
+
+    .certificate-attribution-name {
+      color: #40566B;
+    }
+
+    .certificate-attribution-message {
+      color: #40566B;
+    }
+
+    .certificate-date .certificate-date-choosen {
+      color: #40566B;
+    }
+    .btn-edit {
+      color: #bf0a3e;
+    }
+    .year {
+      color: #4a71a5;
+    }
   }
 
-  .certificate-headers-content .headers-title-colored {
-    color: #40566B;
-  }
+// CERTIF NOEL YOGHIROS
+  .certificate-noel_yoghiros {
+    border-top: 14px solid #910638;
+    border-right: 14px solid #910638;
+    border-left: 14px solid #910638;
+    border-bottom: 57px solid #910638;
 
-  .certificate-number .certificate-number-info {
-    color: #40566B;
-  }
+    .certificate-banner {
+      background-image: asset-url("templates/banner_noel_yoghiros.png");
+    }
 
-  .certificate-tree-quantity {
-    color: #40566B;
-  }
+    .certificate-headers-content .headers-title-colored {
+      color: #910638;
+    }
 
-  .certificate-attribution-name {
-    color: #40566B;
-  }
+    .certificate-number .certificate-number-info {
+      color: #910638;
+    }
 
-  .certificate-attribution-message {
-    color: #40566B;
-  }
+    .certificate-tree-quantity {
+      color: #910638;
+    }
 
-  .certificate-date .certificate-date-choosen {
-    color: #40566B;
-  }
-  .btn-edit {
-    color: #bf0a3e;
-  }
-  .year {
-    color: #4a71a5;
-  }
-}
+    .certificate-attribution-name {
+      color: #910638;
+    }
 
-// BON ANNIVERSAIRE
-.certificate-bon_anniversaire {
-  .certificate-banner {
-    background-image: asset-url("templates/banner_bon_anniversaire.png");
-  }
-  .btn-edit {
-    color: red;
-  }
-}
+    .certificate-attribution-message {
+      color: #910638;
+    }
 
+    .certificate-date .certificate-date-choosen {
+      color: #910638;
+    }
+    .btn-edit {
+      color: #FBCF61;
+    }
+    .year {
+      color: #bf4670;
+    }
+  }
+// CERTIF BON ANNIVERSAIRE
+  .certificate-bon_anniversaire {
+    .certificate-banner {
+      background-image: asset-url("templates/banner_bon_anniversaire.png");
+    }
+    .btn-edit {
+      color: red;
+    }
+  }
 
 // CERTIF MARIAGE
-.certificate-mariage {
-  border-top: 14px solid #BD637D;
-  border-right: 14px solid #BD637D;
-  border-left: 14px solid #BD637D;
-  border-bottom: 57px solid #BD637D;
+  .certificate-mariage {
+    border-top: 14px solid #BD637D;
+    border-right: 14px solid #BD637D;
+    border-left: 14px solid #BD637D;
+    border-bottom: 57px solid #BD637D;
 
-  .certificate-banner {
-    background-image: asset-url("templates/banner_mariage.png");
+    .certificate-banner {
+      background-image: asset-url("templates/banner_mariage.png");
+    }
+      .btn-edit {
+      color: #bd637d;
+    }
+    .year {
+      color: #CD6E82;
+    }
   }
-    .btn-edit {
-    color: #bd637d;
-  }
-  .year {
-    color: #CD6E82;
-  }
-}
 
 // CERTIF MERCI
-.certificate-MERCI {
-  .certificate-banner {
-    background-image: asset-url("templates/banner_merci.png");
-  }
-}
-
-// BTN END
-  .btn-certificate-container {
-    padding: 0 120px;
-    font-family: "Muli", sans-serif;
+  .certificate-merci {
+    .certificate-banner {
+      background-image: asset-url("templates/banner_merci.png");
+    }
   }
 
-// BTN EDIT
-  .btn-edit {
-    font-size: 25px;
-    color: $red;
+// CERTIF JE TAIME
+  .certificate-love {
+    .certificate-banner {
+      background-image: asset-url("templates/banner_love.png");
+    }
   }
 
 
