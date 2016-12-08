@@ -11,26 +11,26 @@
       <% @certificates.each do |certificate| %>
         var posit2 = {};
         var posit = Cesium.Cartesian3.fromDegrees(<%= certificate.parcel.longitude %>,<%= certificate.parcel.latitude %>);
-        Cesium.Cartesian3.add(posit , new Cesium.Cartesian3(<%= rand(0..50) %>*1.0,1.0,100), posit2);
+        Cesium.Cartesian3.add(posit , new Cesium.Cartesian3(<%= rand(0..20) %>*1.0, <%= rand(0..10) %>*1.0,100), posit2);
 
           var entity = viewer.entities.add({
               position : posit2,
               model: {
                 uri : '/cesium_assets/Cesium/Assets/Schefflera.glb',
-                scale: 2.0
+                scale: 2.5
               },
               name: "arbre de <%= certificate.name %>",
               description: "<%= certificate.message %> http://localhost:3000/certificates/<%= certificate.id %>",
-              billboard: {
-               image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
-               horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
-               verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-               // pixelOffset : new Cesium.Cartesian2(0.0,100),
-               // pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.0),
-               // translucencyByDistance : new Cesium.NearFarScalar(100, 1.0, 80000, 0.1),
-               height: 35,
-               width: 35
-              }
+              // billboard: {
+              //  image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
+              //  horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
+              //  verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
+              //  // pixelOffset : new Cesium.Cartesian2(0.0,100),
+              //  // pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.0),
+              //  // translucencyByDistance : new Cesium.NearFarScalar(100, 1.0, 80000, 0.1),
+              //  height: 35,
+              //  width: 35
+              // }
               }
             );
 
