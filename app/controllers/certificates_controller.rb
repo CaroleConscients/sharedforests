@@ -16,7 +16,7 @@ class CertificatesController < ApplicationController
     @weather_description = @weather_hash["description"]
     @weather_temp = @weather_json["main"]["temp"]/10
     @weather_humidity = @weather_json["main"]["humidity"]
-    @icon = "Tree-icon.png"
+    @icon = "Tree-icon-small.png"
 
     respond_to do |format|
       format.html
