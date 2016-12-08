@@ -1,4 +1,4 @@
-DATE: <span class="certificate-date-choosen"> <%= I18n.transliterate(l @certificate.date, format: "%-d %B %Y").upcase %>
+<%= I18n.transliterate(l @certificate.date, format: "%-d %B %Y").upcase %>
 <i class="fa fa-plus-circle btn-edit" id="modify-certificate-date"
   data-toggle="popover"
   title="Modifier la date du cadeau"
@@ -6,7 +6,7 @@ DATE: <span class="certificate-date-choosen"> <%= I18n.transliterate(l @certific
   data-content='<%= simple_form_for @certificate, remote: true do |f| %>
     <%= f.text_field :date, as: :date, value: Date.today.strftime('%e-%m-%Y'), order: [:day, :month, :year], class: "datepicker" %>
     <%= f.button :submit, value: "ok", class: "certificate-submit-btn", data: {disable_with: "ok"} %>
-  <% end %>'></i></span>
+  <% end %>'></i>
 
 
 
