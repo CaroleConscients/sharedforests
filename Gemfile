@@ -24,6 +24,8 @@ gem 'httparty'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'money-rails'
+gem 'stripe'
 
 group :production do
   gem 'rails_12factor'

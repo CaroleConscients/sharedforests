@@ -3,14 +3,20 @@
    <div class="container-form-small">
     <div class="row">
       <!-- <div class="col-xs-12 col-md-6"> -->
-        <%= simple_form_for :payment, url: certificate_payments_path(@certificate), method: :post do |f| %>
-          <%= f.input :card_number, placeholder: "4242 4242 4242 4242" %>
-          <div class="payment-date">
-            <%= f.input :expiration_month, placeholder: "12" %>
-            <%= f.input :expiration_year, placeholder: "17" %>
-            <%= f.input :code %>
-          </div>
-          <%= f.submit "Payer", class: "btn btn-transparent" %>
+        <%= form_tag certificate_payments_path(@certificate) do %>
+          <article>
+            <label class="amount">
+              <span>Amount: 5E</span>
+            </label>
+          </article>
+
+          <!-- # Commented for the lecture, remove comments. -->
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-name="My Tree"
+            data-description="My Tree"
+            data-amount="5"
+            data-currency="<%= :eur %>"></script>
         <% end %>
       <!-- </div> -->
     </div>
