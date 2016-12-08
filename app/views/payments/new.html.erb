@@ -1,17 +1,18 @@
 <h4 class="paddedlight" style="color: #78c8a4; text-align: center; padding-bottom: 35px;">5€, quelques clics et vous découvrirez bientôt l'arbre dans sa forêt :) </h4>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <h1>Payer</h1>
-
-      <%= simple_form_for :payment, url: certificate_payments_path(@certificate), method: :post do |f| %>
-        <%= f.input :card_number %>
-        <%= f.input :expiration_month %>
-        <%= f.input :expiration_year %>
-        <%= f.input :code %>
-        <%= f.submit "Payer"%>
-      <% end %>
+   <div class="container-form-small">
+    <div class="row">
+      <!-- <div class="col-xs-12 col-md-6"> -->
+        <%= simple_form_for :payment, url: certificate_payments_path(@certificate), method: :post do |f| %>
+          <%= f.input :card_number, placeholder: "4242 4242 4242 4242" %>
+          <div class="payment-date">
+            <%= f.input :expiration_month, placeholder: "12" %>
+            <%= f.input :expiration_year, placeholder: "17" %>
+            <%= f.input :code %>
+          </div>
+          <%= f.submit "Payer", class: "btn btn-transparent" %>
+        <% end %>
+      <!-- </div> -->
     </div>
   </div>
 </div>
-
