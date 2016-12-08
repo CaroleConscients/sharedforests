@@ -20,7 +20,7 @@
                 scale: 2.0
               },
               name: "arbre de <%= certificate.name %>",
-              description: '<%= certificate.message %> http://localhost:3000/certificates/<%= certificate.id %>',
+              description: '<%= certificate.message.try(:chomp) %> http://localhost:3000/certificates/<%= certificate.id %>',
               billboard: {
                image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
                horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
