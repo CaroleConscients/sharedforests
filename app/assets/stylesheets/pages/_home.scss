@@ -71,7 +71,7 @@
   }
 
 //// ROUND CARDS - INNER TEXT - 1 PLANT A TREE
-  
+
 
   #plant1 {
     position: absolute;
@@ -99,8 +99,8 @@
     position: absolute;
     z-index: 10;
     text-align: end;
-    top: 32px;
-    right: -63px;
+    top: 24px;
+    right: -80px;
       h4 {
         color: $red;
       }
@@ -159,8 +159,8 @@
 // BOTTOM BUTTON CALL TO ACTION PLANT
 .btn-red-home {
   position: absolute;
-  bottom: 30px;
-  left: 165px;
+  bottom: -26px;
+  left: 171px;
   background-color: $yellow;
   font-family: "Muli", sans-serif;
   color: white;

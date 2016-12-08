@@ -18,12 +18,12 @@
 }
 
 #certificate_name::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #f7f4ed;
+  color: white;
   font-family: "Muli", sans-serif;
 }
 
 #certificate_giver::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #f7f4ed;
+  color: white;
   font-family: "Muli", sans-serif;
 }
 #new_certificate {
@@ -48,7 +48,7 @@
 
   optgroup, select {
     width: 100%;
-    color: #f7f4ed;
+    color: white;
     font-family: "Muli", sans-serif;
     font-style: italic;
     margin: 0;
@@ -75,7 +75,7 @@
     border-radius: none;
     box-shadow: none;
     // font-style: italic;
-    color: #f7f4ed;
+    color: white;
     font-style: italic;
     input, textarea {
       width: 100%;
