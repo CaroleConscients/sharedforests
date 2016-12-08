@@ -21,10 +21,10 @@
               },
               name: "arbre de <%= certificate.name %>",
               description: '<%= certificate.message.try(:chomp) %> http://localhost:3000/certificates/<%= certificate.id %>',
-              billboard: {
-               image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
-               horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
-               verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
+              // billboard: {
+              //  image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
+              //  horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
+              //  verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
                // pixelOffset : new Cesium.Cartesian2(0.0,100),
                // pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.0),
                // translucencyByDistance : new Cesium.NearFarScalar(100, 1.0, 80000, 0.1),
@@ -78,7 +78,23 @@
         },
         {
         "id" : "point 1",
-        "name": "Plantation of Ramundo",
+        "name": "Terrain de Juan Bautista Palacios Camizan",
+        "position" : {
+          "cartographicDegrees" : [-76.70769, -7.12839, 0]
+        },
+        "point": {
+          "color": {
+            "rgba": [255, 255, 255, 255]
+          },
+          "outlineColor": {
+            "rgba": [255, 0, 0, 255]
+          },
+          "outlineWidth" : 4,
+          "pixelSize": 5
+        }
+        {
+        "id" : "point 2",
+        "name": "Terrain de William Homero Villanueva Severa",
         "position" : {
           "cartographicDegrees" : [-76.70769, -7.12839, 0]
         },

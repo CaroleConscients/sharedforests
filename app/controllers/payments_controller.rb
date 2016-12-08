@@ -5,6 +5,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
+    @certificate = Certificate.find(params[:certificate_id])
     customer = Stripe::Customer.create(
       source: params[:stripeToken],
       email:  params[:stripeEmail]
@@ -12,13 +13,13 @@ class PaymentsController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       5, # or amount_pennies
+      amount:       500, # or amount_pennies
       description:  "Payment",
-      currency:     config.default_currency
+      currency:     :eur
     )
 
-    @order.update(payment: charge.to_json, state: 'paid')
-    redirect_to order_path(@order)
+    # @order.update(payment: charge.to_json, state: 'paid')
+    redirect_to certificate_path(@certificate)
 
 
   rescue Stripe::CardError => e
