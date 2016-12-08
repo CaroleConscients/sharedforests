@@ -1,28 +1,74 @@
-<p> test affichage </p>
-<p> <%= @certificates %> </p>
-<p> <%= @certificates.each do |certificate|    %>
-<p> <%=
+<h2 style="text-align: center"> THE SHARED FOREST </h2>
 
 <div id="cesiumContainer" style="width: 100%; height: 100%;"></div>
 
 <%= content_for(:after_js) do %>
   <script>
     function globe(){
-      var viewer = new Cesium.Viewer('cesiumContainer');
+      var viewer = new Cesium.Viewer('cesiumContainer', {
+        baseLayerPicker : false
+      });
+      <% @certificates.each do |certificate| %>
+        var posit2 = {};
+        var posit = Cesium.Cartesian3.fromDegrees(<%= certificate.parcel.longitude %>,<%= certificate.parcel.latitude %>);
+        Cesium.Cartesian3.add(posit , new Cesium.Cartesian3(<%= rand(0..50) %>*1.0,1.0,100), posit2);
+
+          var entity = viewer.entities.add({
+              position : posit2,
+              model: {
+                uri : '/assets/Cesium/Assets/Schefflera.glb', 
+                scale: 2.0
+              },
+              name: "arbre de <%= certificate.name %>",
+              description: "<%= certificate.message %> http://localhost:3000/certificates/<%= certificate.id %>",
+              billboard: { 
+               image : '/assets/Cesium/Assets/Tree-icon.png',
+               horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
+               verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
+               // pixelOffset : new Cesium.Cartesian2(0.0,100),
+               // pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.0),
+               // translucencyByDistance : new Cesium.NearFarScalar(100, 1.0, 80000, 0.1),
+               height: 35,
+               width: 35
+              }
+              }
+            );
+
+        viewer.trackedEntity = entity;
+      <% end %>
+
+      setTimeout(function(){
+        viewer.camera.flyTo({ destination : Cesium.Cartesian3.fromDegrees(-76.70769, -7.12839, 25000.0) })
+      }, 5000);
+
       var entity = viewer.entities.add({
-            position : Cesium.Cartesian3.fromDegrees(-76.70769,7.12839),
-            model: {
-              uri : '/assets/Cesium/Assets/Schefflera.glb'
-            },
-            billboard: {
-             image : '/assets/Cesium/Assets/logo.png',
-             horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
-             verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-             pixelOffset : new Cesium.Cartesian2(0.0,100),
-             pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.0),
-             translucencyByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.1)
-           }}
-          );
+              name: "Terrain de William Homero Villanueva Severa",
+              polygon: {
+                  hierarchy : Cesium.Cartesian3.fromDegreesArray([
+                    -76.70769, -7.599353,
+                    -76.674419, -7.599609,
+                    -76.674253, -7.599293,
+                    -76.675471,  -7.598468
+                    ]),
+                material : Cesium.Color.GREEN.withAlpha(0.5),
+                outline : true,
+                outlineColor : Cesium.Color.BLACK
+             }
+           });
+      var entity = viewer.entities.add({
+              name: "Terrain de Juan Bautista Palacios Camizan",
+              polygon: {
+                  hierarchy : Cesium.Cartesian3.fromDegreesArray([
+                    -76.706899, -7.126656,
+                    -76.706271, -7.127272,
+                    -76.708154, -7.128904,
+                    -76.709024, -7.128405
+                    ]),
+                material : Cesium.Color.GREEN.withAlpha(0.5),
+                outline : true,
+                outlineColor : Cesium.Color.BLACK
+             }
+           });
       viewer.trackedEntity = entity;
       var czml = [
         {
@@ -32,9 +78,9 @@
         },
         {
         "id" : "point 1",
-        "name": "point",
+        "name": "Plantation of Ramundo",
         "position" : {
-          "cartographicDegrees" : [-76.70769, 7.12839, 0]
+          "cartographicDegrees" : [-76.70769, -7.12839, 0]
         },
         "point": {
           "color": {
@@ -44,18 +90,39 @@
             "rgba": [255, 0, 0, 255]
           },
           "outlineWidth" : 4,
-          "pixelSize": 20
+          "pixelSize": 5
         }
       }];
       var dataSource = Cesium.CzmlDataSource.load(czml);
       viewer.dataSources.add(dataSource);
-      viewer.zoomTo(dataSource);
 
+      var layers = viewer.imageryLayers;
+      var weathermap = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+                url : 'https://mesonet.agron.iastate.edu/cgi-bin/wms/goes/conus_ir.cgi?',
+                layers : 'goes_conus_ir',
+                credit : 'Infrared data courtesy Iowa Environmental Mesonet',
+                parameters : {
+                    transparent : 'true',
+                    format : 'image/png'
+                }
+            }));
+      weathermap.alpha = 0.3;
+      weathermap.brightness = 2.0;
 
+      var dataSource2 = Cesium.KmlDataSource.load('/assets/Cesium/Assets/Schefflera.glb', {
+          stroke: Cesium.Color.HOTPINK,
+          fill: Cesium.Color.PINK,
+          strokeWidth: 3,
+          markerSymbol: '?',
+          camera: viewer.camera,
+          canvas: viewer.canvas
+      });
+      viewer.dataSources.add(dataSource2)
 
+     
+      
     }
-
-    $(function() {
+  $(function() {
       globe();
     });
   </script>
