@@ -1,7 +1,9 @@
 <div class="wrapper mongradient">
 
 <div class="container">
-      <h1 style="text-align: center;">Offer a tree</h1>
+      <!-- <h1 style="text-align: center;">Offer a tree</h1> -->
+  <h4 class="paddedlight" style="color: #78c8a4; text-align: center; padding-bottom: 35px;"> Choisissez le certificat que vous souhaitez offrir, personnalisez, ajustez et éditez !</h4>
+
       <!-- BEGINNING BORDER AND LAYOUT -->
       <div id="certificate" class="certificate-border certificate-<%= @certificate.template_name %>">
         <div class="certificate-layout">
@@ -147,20 +149,22 @@
 </div>
 
 <!-- VALIDATE FORM -->
-<div class="container btn-certificate-container">
+<h4 class="btn-certificate-container">
+<!-- <div class="container btn-certificate-container"> -->
 <%= simple_form_for @certificate do |f| %>
   <%= f.input :template_name, as: :hidden %>
   <%= f.submit value: "Valider et commander", class: "btn btn-info btn-large-container"; %>
 <% end %>
-</div>
+<!-- </div> -->
+</h4>
 
 <!-- LINKS -->
-<div class="container ">
+<!-- <div class="container ">
   <div style="text-align: center">
-    <h2 style="color: white, background-color: $green""> <%= link_to "See the location and the current weather on the plantation", "/certificates/#{@id}" %> </h2>
+    <h2 style="color: white, background-color: $green""> <%#= link_to "See the location and the current weather on the plantation", "/certificates/#{@id}" %> </h2>
   </div>
 </div>
-</div>
+</div> -->
 
 
 </div>

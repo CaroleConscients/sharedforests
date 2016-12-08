@@ -55,6 +55,8 @@ class CertificatesController < ApplicationController
           @certificate.template_name = Certificate::TEMPLATE_MARIAGE.first
        elsif @certificate.occasion == "Dire merci"
           @certificate.template_name = Certificate::TEMPLATE_MERCI.first
+       elsif @certificate.occasion == "Faire plaisir"
+          @certificate.template_name = Certificate::TEMPLATE_FAIRE_PLAISIR.first
         end
 
         @certificate.save
