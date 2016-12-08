@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   resources :certificates, except: :destroy do
     resources :payments, only: [:new, :create]
   end
-  resources :orders, only: [:show, :create] do
-  resources :payments, only: [:new, :create]
-end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

@@ -1,7 +1,7 @@
 class PaymentsController < ApplicationController
-  before_action :set_order
 
   def new
+    @certificate = Certificate.find(params[:certificate_id])
   end
 
   def create
@@ -24,13 +24,6 @@ class PaymentsController < ApplicationController
   rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_order_payment_path(@order)
-  end
-
-
-private
-
-  def set_order
-    @order = Order.where(state: 'pending').find(params[:order_id])
   end
 end
 
