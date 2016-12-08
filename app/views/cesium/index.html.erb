@@ -16,13 +16,13 @@
           var entity = viewer.entities.add({
               position : posit2,
               model: {
-                uri : '/assets/Cesium/Assets/Schefflera.glb', 
+                uri : '/cesium_assets/Cesium/Assets/Schefflera.glb', 
                 scale: 2.0
               },
               name: "arbre de <%= certificate.name %>",
               description: "<%= certificate.message %> http://localhost:3000/certificates/<%= certificate.id %>",
               billboard: { 
-               image : '/assets/Cesium/Assets/Tree-icon.png',
+               image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
                horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
                verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
                // pixelOffset : new Cesium.Cartesian2(0.0,100),
@@ -109,7 +109,7 @@
       weathermap.alpha = 0.3;
       weathermap.brightness = 2.0;
 
-      var dataSource2 = Cesium.KmlDataSource.load('/assets/Cesium/Assets/Schefflera.glb', {
+      var dataSource2 = Cesium.KmlDataSource.load('/cesium_assets/Cesium/Assets/Schefflera.glb', {
           stroke: Cesium.Color.HOTPINK,
           fill: Cesium.Color.PINK,
           strokeWidth: 3,
