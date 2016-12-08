@@ -4,15 +4,27 @@
   // padding: 2em;
   padding: 30px 30px 15px 30px;
   border: 5px solid #F5CA5F;
+  text-align: center;
 }
 
+.container-form-small {
+  width: 50%;
+  background-color: $yellow;
+  margin: 3em;
+  // padding: 2em;
+  padding: 0px 30px 15px 30px;
+  border: 5px solid #F5CA5F;
+  margin: 0 auto;
+}
 
 #certificate_name::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #f7f4ed;
+  font-family: "Muli", sans-serif;
 }
 
 #certificate_giver::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #f7f4ed;
+  font-family: "Muli", sans-serif;
 }
 #new_certificate {
 
@@ -37,6 +49,7 @@
   optgroup, select {
     width: 100%;
     color: #f7f4ed;
+    font-family: "Muli", sans-serif;
     font-style: italic;
     margin: 0;
     border-bottom: 3px dashed #FADD93;
@@ -67,6 +80,7 @@
     input, textarea {
       width: 100%;
       color: white;
+      font-family: "Muli", sans-serif;
       font-style: italic;
       margin: 0;
       border-bottom: 3px dashed #FADD93;
@@ -77,6 +91,9 @@
     }
   }
 
+.edit_certificate {
+  text-align: center;
+}
 // .datepicker table tr td, .datepicker table tr th {
 //     text-align: center;
 //     width: 90px;
@@ -89,4 +106,31 @@
 //     padding: 5px;
 //     background-color: red;
 // }
+}
+
+.payments-new {
+  .container-form-small {
+    border-radius: 5px;
+    padding-top: 15px;
+  }
+  form {
+    label {
+      color: white;
+    }
+    .btn-transparent {
+      width: 100%;
+      margin-top: 0;
+    }
+    .payment-date {
+      display: flex;
+      // justify-content: space-between;
+      .form-group {
+        flex-basis: 33%;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }

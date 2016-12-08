@@ -36,6 +36,7 @@
   .btn-certificate-container {
     padding: 0 120px;
     font-family: "Muli", sans-serif;
+    text-align: center;
   }
 
   // BTN EDIT
@@ -307,14 +308,27 @@
 
 
 /////// CUSTOM CERTIF TEMPLATES CONTAINER AND THUMBNAIL SIZE
+  .templates-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .template-col {
+    flex: 0 0 22%;
+    margin: 10px;
+  }
+
   .template-container {
-    padding: 25px 108px 25px 108px;
+    padding: 25px 120px 25px 120px;
   }
 
   .template-thumbnail {
     width: 225px;
     height: 100%;
   }
+
 
 // CERTIF AMAZONIE
   .certificate-amazonie {

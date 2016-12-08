@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207181049) do
+ActiveRecord::Schema.define(version: 20161208115826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161207181049) do
     t.string   "template_name"
     t.string   "template_border_color"
     t.string   "template_text_color"
+    t.string   "email"
     t.index ["parcel_id"], name: "index_certificates_on_parcel_id", using: :btree
   end
 
