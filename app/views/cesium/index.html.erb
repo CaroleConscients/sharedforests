@@ -37,7 +37,7 @@
                 scale: 3.0
               },
               name: "arbre de <%= certificate.name %>",
-              description: "<%= certificate.message.try(:chomp) %> <a href='/certificates/<%= certificate.id %>.pdf' target='_blank'>Certificat</a>"
+              description: '<%= certificate.message.try(:chomp) %> <%= link_to 'Certificat', certificate_path(certificate, format: "pdf"), target: :blank %>'
               // billboard: {
               //  image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
               //  horizontalOrigin : Cesium.HorizontalOrigin.CENTER,

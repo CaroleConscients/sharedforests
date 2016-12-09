@@ -14,19 +14,19 @@ Parcel.destroy_all
 
 puts "Creating users..."
 
-User.create!({
+carole = User.create!({
   email: "Carole@conscients.com",
   password: "Carole"
   })
 
-User.create!({
+alain = User.create!({
   email: "alain.crawford@gmail.com",
   password: "Alain15"
   })
 
 puts "Creating parcels..."
 
-Parcel.create!({
+parcel_camizan = Parcel.create!({
   unique_number: "AH-PE-12345",
   latitude: -7.12839,
   longitude: -76.70769,
@@ -36,13 +36,13 @@ Parcel.create!({
   tree_species: "Capirona"
   })
 
-Parcel.create!({
+parcel_severa = Parcel.create!({
   unique_number: "1-5_NJAE-2511",
   latitude: -7.599353,
   longitude: -76.675140,
   farmer_name: "William Homero Villanueva Severa",
   tree_quantity: 100,
-  tree_quantity_remaining: 5,
+  tree_quantity_remaining: 0,
   tree_species: "Capirona"
   })
 
@@ -50,10 +50,10 @@ puts "Creating certificates..."
 
 Certificate.create! ({
   # unique_number: 
-  parcel_id: 1,
+  parcel: parcel_camizan,
   name: "maman",
   message: "je t'aime énormément",
-  # date: 
+  date: Date.new(2016, 12, 25),
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -66,10 +66,10 @@ Certificate.create! ({
 
 Certificate.create! ({
   # unique_number: 
-  parcel_id: 1,
+  parcel: parcel_camizan,
   name: "Boris",
   message: "bon anniversaire le Wagon",
-  # date: 
+  date: Date.new(2016, 12, 25),
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -82,10 +82,10 @@ Certificate.create! ({
 
 Certificate.create! ({
   # unique_number: 
-  parcel_id: 1,
+  parcel: parcel_camizan,
   name: "Gabriel",
   message: "Merci pour tout ce JS",
-  # date: 
+  date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -98,10 +98,10 @@ Certificate.create! ({
 
 Certificate.create! ({
   # unique_number: 
-  parcel_id: 1,
+  parcel: parcel_camizan,
   name: "François",
   message: "Merci pour ce moment",
-  # date: 
+  date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -114,10 +114,10 @@ Certificate.create! ({
 
 Certificate.create! ({
   # unique_number: 
-  parcel_id: 1,
+  parcel: parcel_camizan,
   name: "Pierre",
   message: "J'espère que tu reviendras bientôt",
-  # date: 
+  date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -130,10 +130,10 @@ Certificate.create! ({
 
 Certificate.create! ({
   # unique_number: 
-  parcel_id: 1,
+  parcel: parcel_camizan,
   name: "maman",
   message: "Tu es mon coeur",
-  # date: 
+  date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -146,10 +146,10 @@ Certificate.create! ({
 
 Certificate.create! ({
   # unique_number: 
-  parcel_id: 2,
+  parcel: parcel_camizan,
   name: "maman",
   message: "je t'aime énormément",
-  # date: 
+  date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -162,10 +162,10 @@ Certificate.create! ({
 
   Certificate.create! ({
   # unique_number: 
-  parcel_id: 2,
+  parcel: parcel_camizan,
   name: "papa",
   message: "je t'aime infiniment",
-  # date: 
+  date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
   # updated_at:            null: false
@@ -177,16 +177,18 @@ Certificate.create! ({
   })
 
 Certificate.create! ({
-  parcel_id: 2,
+  parcel: parcel_camizan,
   name: "papa",
   message: "Tu es mon héros",
-  trees_quantity: 1,
+  date: Date.new(2016, 12, 25),
+  trees_quantity: 1
   })
 
 Certificate.create! ({
-  parcel_id: 2,
+  parcel: parcel_camizan,
   name: "Maman",
   message: "merci pour tout",
+  date: Date.new(2016, 12, 25),
   trees_quantity: 2
   })
 
@@ -201,9 +203,10 @@ Certificate.create! ({
 #   })
 
 Certificate.create! ({
-  parcel_id: 2,
+  parcel: parcel_camizan,
   name: "Jean",
   message: "rien ne nous arrêtera",
+  date: Date.new(2016, 12, 25),
   trees_quantity: 2
   })
 
