@@ -1,24 +1,50 @@
-<h4 class="paddedlight" style="color: #78c8a4; text-align: center; padding-bottom: 35px;">5€, quelques clics et vous découvrirez bientôt l'arbre dans sa forêt :) </h4>
-<div class="container">
-   <div class="container-form-small">
-    <div class="row">
-      <!-- <div class="col-xs-12 col-md-6"> -->
-        <%= form_tag certificate_payments_path(@certificate) do %>
-          <article>
-            <label class="amount">
-              <span>Amount: 5E</span>
-            </label>
-          </article>
+<div class="wrapper homecover" style="background-image: url('<%= image_url("alto-h-a.jpg")%>');">
+  <div class="container paddedlot">
+     <div class="container-form-small">
+      <div class="row">
+        <!-- <div class="col-xs-12 col-md-6"> -->
+          <%= form_tag certificate_payments_path(@certificate) do %>
+            <!-- PAYMENT BUTTON  -->
+            <div class="container-form-payment">
+                <p style="color: white; text-align: center; padding-top: 20px; padding-bottom: 20px">
+                Grâce à vous, un arbre sera planté en Amazonie péruvienne, selon le modèle de l'agroforesterie. Votre cadeau aura un impact sur le sol, l'air, la biodiversité et plus largement le climat. Merci !
+              </p>
+              <div class="text-center">
+                <button id="stripe-trigger" class="btn btn-treehouse">Payez 5€ par CB</button>
 
-          <!-- # Commented for the lecture, remove comments. -->
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-name="My Tree"
-            data-description="My Tree"
-            data-amount="5"
-            data-currency="<%= :eur %>"></script>
-        <% end %>
-      <!-- </div> -->
+              </div>
+            </div>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-email="<%= current_user.email %>"
+              data-name="My Tree"
+              data-description="My Tree"
+              data-amount="500"
+              data-currency="EUR">
+              // amount in cents
+            </script>
+          <% end %>
+        <!-- </div> -->
+      </div>
     </div>
   </div>
+
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    $(document).ready(function() {
+      $('.stripe-button-el').addClass('hidden');
+      $('#stripe-trigger').click(function(e) {
+        e.preventDefault();
+        $('.stripe-button-el').click();
+      });
+    });
+  </script>
+<% end %>
+
+
+<!-- <h4 class="paddedlight" style="color: #78c8a4; text-align: center; padding-bottom: 35px;">5€, quelques clics et vous découvrirez bientôt l'arbre dans sa forêt :) </h4> -->
+
+
