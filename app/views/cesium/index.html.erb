@@ -15,14 +15,20 @@
         var posit = Cesium.Cartesian3.fromDegrees(<%= certificate.parcel.longitude %>,<%= certificate.parcel.latitude %>);
         Cesium.Cartesian3.add(posit , new Cesium.Cartesian3(<%= rand(0..50) %>*1.0,<%= rand(0..10) %>*1.0,100), posit2);
         
-        // var Pin = viewer.entities.add({
-        //         name : 'Blank blue pin',
-        //         position : posit2,
-        //         billboard : {
-        //             image : pinBuilder.fromColor(<%= (current_user == certificate.user) ? Cesium.Color.ROYALBLUE, 48 || Cesium.Color.GREEN, 48 %>).toDataURL(),
-        //             verticalOrigin : Cesium.VerticalOrigin.BOTTOM
-        //         }
-        //         });
+        <% if current_user == certificate.users.first %>
+          var color = Cesium.Color.GREEN;
+        <% else %>
+          var color = Cesium.Color.RED;
+        <% end %>
+
+        var Pin = viewer.entities.add({
+                name : 'Blank blue pin',
+                position : posit2,
+                billboard : {
+                    image : pinBuilder.fromColor(color, 48).toDataURL(),
+                    verticalOrigin : Cesium.VerticalOrigin.BOTTOM
+                }
+                });
 
           var entity = viewer.entities.add({
               position : posit2,

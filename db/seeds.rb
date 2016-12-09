@@ -42,7 +42,7 @@ Parcel.create!({
   longitude: -76.675140,
   farmer_name: "William Homero Villanueva Severa",
   tree_quantity: 100,
-  tree_quantity_remaining: 100,
+  tree_quantity_remaining: 5,
   tree_species: "Capirona"
   })
 
