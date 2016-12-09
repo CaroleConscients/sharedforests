@@ -68,7 +68,7 @@ Certificate.create! ({
   # unique_number: 
   parcel: parcel_camizan,
   name: "Boris",
-  message: "bon anniversaire le Wagon",
+  message: "Joyeux Noël au Wagon",
   date: Date.new(2016, 12, 25),
   trees_quantity: 1,
   # created_at:            null: false
@@ -83,8 +83,8 @@ Certificate.create! ({
 Certificate.create! ({
   # unique_number: 
   parcel: parcel_camizan,
-  name: "Gabriel",
-  message: "Merci pour tout ce JS",
+  name: "Théodore",
+  message: "Merci pour tout ton travail cette année",
   date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
@@ -116,7 +116,7 @@ Certificate.create! ({
   # unique_number: 
   parcel: parcel_camizan,
   name: "Pierre",
-  message: "J'espère que tu reviendras bientôt",
+  message: "J'espère que tu repasseras par Paris bientôt",
   date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
   # created_at:            null: false
@@ -131,7 +131,7 @@ Certificate.create! ({
 Certificate.create! ({
   # unique_number: 
   parcel: parcel_camizan,
-  name: "maman",
+  name: "Dorothée",
   message: "Tu es mon coeur",
   date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
@@ -147,7 +147,7 @@ Certificate.create! ({
 Certificate.create! ({
   # unique_number: 
   parcel: parcel_camizan,
-  name: "maman",
+  name: "Ma maman adorée",
   message: "je t'aime énormément",
   date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
@@ -163,7 +163,7 @@ Certificate.create! ({
   Certificate.create! ({
   # unique_number: 
   parcel: parcel_camizan,
-  name: "papa",
+  name: "A mon papa adoré",
   message: "je t'aime infiniment",
   date: Date.new(2016, 12, 25), 
   trees_quantity: 1,
@@ -178,17 +178,17 @@ Certificate.create! ({
 
 Certificate.create! ({
   parcel: parcel_camizan,
-  name: "papa",
-  message: "Tu es mon héros",
+  name: "Joel",
+  message: "Bon anniversaire",
   date: Date.new(2016, 12, 25),
   trees_quantity: 1
   })
 
 Certificate.create! ({
   parcel: parcel_camizan,
-  name: "Maman",
-  message: "merci pour tout",
-  date: Date.new(2016, 12, 25),
+  name: "Carole",
+  message: "Bonne chance pour le pitch",
+  date: Date.new(2016, 12, 10),
   trees_quantity: 2
   })
 
