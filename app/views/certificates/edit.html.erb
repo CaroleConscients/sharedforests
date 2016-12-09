@@ -150,30 +150,18 @@
   </div>
 </div>
 
-   <div class="container-form-payment">
-   <p style="color: $gray; text-align: center;">5€, quelques clics et vous découvrirez bientôt l'arbre dans sa forêt. </p>
-   <div class="text-center">
-     <button id="stripe-trigger" class="btn btn-treehouse">Payez par CB</button>
-   </div>
-  </div>
+<!-- VALIDATE FORM -->
+<h4 class="btn-certificate-container">
+<%= simple_form_for @certificate do |f| %>
+  <%= f.input :template_name, as: :hidden %>
+  <%= f.submit value: "Valider et commander", class: "btn btn-info btn-large-container" %>
+<% end %>
+
 </div>
 
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-  data-email="<%= current_user.email %>"
-  data-name="My Tree"
-  data-description="My Tree"
-  data-amount="500"
-  data-currency="EUR">
-  // amount in cents
-</script>
 <% content_for :after_js do %>
   <script>
     $(document).ready(function() {
-      $('.stripe-button-el').addClass('hidden');
-      $('#stripe-trigger').click(function() {
-        $('.stripe-button-el').click();
-      });
       $('#modify-certificate-date').click(function() {
         $('.datepicker').datepicker({
           format: 'dd/mm/yyyy',

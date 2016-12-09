@@ -71,16 +71,6 @@ class CertificatesController < ApplicationController
 
   def update
     @certificate = Certificate.find(params[:id])
-
-    # TODO: move to payment
-    if @certificate.unique_number.nil?
-      # AH-PE- PARCEL UNIQUE NUMBER plus AT PARCEL CERTIFICATE (id certificate en cours) UNIQUE NUMBER CALCULE
-      number = @certificate.parcel.tree_quantity - @certificate.parcel.tree_quantity_remaining + 1
-      number_code = number.to_s.rjust(3, "0")
-
-      @certificate.unique_number = "#{@certificate.parcel.unique_number}-#{number_code}"
-    end
-
     @certificate.assign_attributes(certificate_params)
 
     if @certificate.save
