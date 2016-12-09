@@ -8,10 +8,21 @@
       var viewer = new Cesium.Viewer('cesiumContainer', {
         baseLayerPicker : false
       });
+      var pinBuilder = new Cesium.PinBuilder();
       <% @certificates.each do |certificate| %>
+        
         var posit2 = {};
         var posit = Cesium.Cartesian3.fromDegrees(<%= certificate.parcel.longitude %>,<%= certificate.parcel.latitude %>);
-        Cesium.Cartesian3.add(posit , new Cesium.Cartesian3(<%= rand(0..50) %>*1.0,1.0,100), posit2);
+        Cesium.Cartesian3.add(posit , new Cesium.Cartesian3(<%= rand(0..50) %>*1.0,<%= rand(0..10) %>*1.0,100), posit2);
+        
+        // var Pin = viewer.entities.add({
+        //         name : 'Blank blue pin',
+        //         position : posit2,
+        //         billboard : {
+        //             image : pinBuilder.fromColor(<%= (current_user == certificate.user) ? Cesium.Color.ROYALBLUE, 48 || Cesium.Color.GREEN, 48 %>).toDataURL(),
+        //             verticalOrigin : Cesium.VerticalOrigin.BOTTOM
+        //         }
+        //         });
 
           var entity = viewer.entities.add({
               position : posit2,
@@ -20,7 +31,7 @@
                 scale: 2.0
               },
               name: "arbre de <%= certificate.name %>",
-              description: '<%= certificate.message.try(:chomp) %> http://localhost:3000/certificates/<%= certificate.id %>',
+              description: "<%= certificate.message.try(:chomp) %> <a href='/certificates/<%= certificate.id %>.pdf' target='_blank'>Certificat</a>"
               // billboard: {
               //  image : '/cesium_assets/Cesium/Assets/Tree-icon.png',
               //  horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
@@ -28,9 +39,9 @@
                // pixelOffset : new Cesium.Cartesian2(0.0,100),
                // pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.0e3, 1.0, 1.5e6, 0.0),
                // translucencyByDistance : new Cesium.NearFarScalar(100, 1.0, 80000, 0.1),
-               height: 35,
-               width: 35
-              }
+              //  height: 35,
+              //  width: 35
+              // }
               }
             );
 
@@ -38,14 +49,107 @@
       <% end %>
 
       setTimeout(function(){
-        viewer.camera.flyTo({ destination : Cesium.Cartesian3.fromDegrees(-76.70769, -7.12839, 25000.0) })
+        viewer.camera.flyTo({ destination : Cesium.Cartesian3.fromDegrees(-76.70769, -7.12839, 35000.0) })
       }, 5000);
+
+      function addLabel() {
+          Sandcastle.declare(addLabel);
+          viewer.entities.add({
+              // position : Cesium.Cartesian3.fromDegrees(-75.1641667, -6.50139),
+              position : Cesium.Cartesian3.fromDegrees(-76.70769, -7.12839),
+              model: {
+                uri : '/cesium_assets/Cesium/Assets/Schefflera.glb',
+                scale: 100.0
+              },
+              label : {
+                  text : 'Tarapoto, Pérou'
+              }
+          });
+      };
+
+      // function addLabel() {
+      //         Sandcastle.declare(addLabel);
+      //         viewer.entities.add({
+      //             position : Cesium.Cartesian3.fromDegrees(-76.3656, -6.50139),
+      //             label : {
+      //                 text : 'Tarapoto, Pérou'
+      //             }
+      //         });
+      //     }
+
+      // function setFont() {
+      //     Sandcastle.declare(setFont);
+      //     viewer.entities.add({
+      //         position : Cesium.Cartesian3.fromDegrees(-76.3656, -6.50139),
+      //         label : {
+      //             text : 'Tarapoto, Pérou',
+      //             font : 'Helvetica',
+      //             fillColor : Cesium.Color.SKYBLUE,
+      //             outlineColor : Cesium.Color.BLACK,
+      //             outlineWidth : 2,
+      //             style : Cesium.LabelStyle.FILL_AND_OUTLINE
+      //         }
+      //     });
+      // }
+
+      // function setProperties() {
+      //     Sandcastle.declare(setProperties);
+      //     var entity = viewer.entities.add({
+      //         position : Cesium.Cartesian3.fromDegrees(-76.3656, -6.50139, 30000),
+      //         label : {
+      //             text : 'Tarapoto, Pérou'
+      //         }
+      //     });
+
+      //     entity.label.scale = 2.0;
+      // }
+
+          // function offsetByDistance() {
+          //     Sandcastle.declare(offsetByDistance);
+          //     var image = new Image();
+          //     image.onload = function() {
+          //         viewer.entities.add({
+          //             position : Cesium.Cartesian3.fromDegrees(-76.3656, -6.50139),
+          //             billboard : {
+          //                 position : Cesium.Cartesian3.fromDegrees(-76.3656, -6.50139),
+          //                 scaleByDistance : new Cesium.NearFarScalar(1.5e2, 5.0, 1.5e7, 0.5),
+          //                 image : image
+          //             },
+          //             label : {
+          //                 text : 'Label on top of scaling billboard',
+          //                 font : '20px sans-serif',
+          //                 horizontalOrigin : Cesium.HorizontalOrigin.CENTER,
+          //                 pixelOffset : new Cesium.Cartesian2(0.0, -image.height),
+          //                 pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.5e2, 3.0, 1.5e7, 0.5)
+          //             }
+          //         });
+          //     };
+          //     image.src = '../images/facility.gif';
+          // }
+
+          // function fadeByDistance() {
+          //     Sandcastle.declare(fadeByDistance);
+          //     viewer.entities.add({
+          //         position : Cesium.Cartesian3.fromDegrees(-76.3656, -6.50139),
+          //         label : {
+          //             text : 'New York',
+          //             translucencyByDistance : new Cesium.NearFarScalar(1.5e2, 1.0, 1.5e8, 0.0)
+          //         }
+          //     });
+          //     viewer.entities.add({
+          //         position : Cesium.Cartesian3.fromDegrees(-84.39, 33.75),
+          //         label : {
+          //             text : 'Atlanta',
+          //             translucencyByDistance : new Cesium.NearFarScalar(1.5e5, 1.0, 1.5e7, 0.0)
+          //         }
+          //     });
+          // }
 
       var entity = viewer.entities.add({
               name: "Terrain de William Homero Villanueva Severa",
               polygon: {
                   hierarchy : Cesium.Cartesian3.fromDegreesArray([
-                    -76.70769, -7.599353,
+                    -76.70769, -7.599363,
                     -76.674419, -7.599609,
                     -76.674253, -7.599293,
                     -76.675471,  -7.598468
@@ -64,12 +168,13 @@
                     -76.708154, -7.128904,
                     -76.709024, -7.128405
                     ]),
-                material : Cesium.Color.GREEN.withAlpha(0.5),
+                material : Cesium.Color.GREEN.withAlpha(0.2),
                 outline : true,
                 outlineColor : Cesium.Color.BLACK
              }
            });
       viewer.trackedEntity = entity;
+
       var czml = [
         {
         "id" : "document",
@@ -90,56 +195,95 @@
             "rgba": [255, 0, 0, 255]
           },
           "outlineWidth" : 4,
-          "pixelSize": 5
-        }
+          "pixelSize":  {
+                "number": 10
+            }
+          }, 
+          "label": {
+            "fillColor" : {
+                "rgba" : [0, 255, 255, 255]
+            },
+            // "font" : "11pt Lucida Console",
+            "horizontalOrigin" : "LEFT",
+            "outlineColor" : {
+                "rgba":[0, 0, 0, 255]
+            },
+            "outlineWidth" : 2,
+            "pixelOffset" : {
+                "cartesian2" : [12, 0]
+            },
+            "style" : "FILL_AND_OUTLINE",
+            "text" : "Terrain de Juan Bautista Palacios Camizan"
+        }},
         {
-        "id" : "point 2",
+        "id": "point2",
         "name": "Terrain de William Homero Villanueva Severa",
         "position" : {
-          "cartographicDegrees" : [-76.70769, -7.12839, 0]
+            "cartographicDegrees" : [-76.67514, -7.599353,0]
         },
         "point": {
-          "color": {
-            "rgba": [255, 255, 255, 255]
-          },
-          "outlineColor": {
-            "rgba": [255, 0, 0, 255]
-          },
-          "outlineWidth" : 4,
-          "pixelSize": 5
-        }
-      }];
-      var dataSource = Cesium.CzmlDataSource.load(czml);
-      viewer.dataSources.add(dataSource);
+            "color": {
+                "rgba": [255, 255, 255, 255]
+            },
+            "outlineColor": {
+                "rgba": [200, 0, 0, 255]
+            },
+            "outlineWidth" : 4,
+            "pixelSize": {
+                "number": 10
+            }
+        },
+        "label": {
+            "fillColor" : {
+                "rgba" : [0, 255, 255, 255]
+            },
+            // "font" : "11pt Lucida Console",
+            "horizontalOrigin" : "LEFT",
+            "outlineColor" : {
+                "rgba":[0, 0, 0, 255]
+            },
+            "outlineWidth" : 2,
+            "pixelOffset" : {
+                "cartesian2" : [12, 0]
+            },
+            "style" : "FILL_AND_OUTLINE",
+            "text" : "Terrain de William Homero Villanueva Severa"
+        }}
+        ];
+        var dataSource = Cesium.CzmlDataSource.load(czml);
+        viewer.dataSources.add(dataSource);
 
-      var layers = viewer.imageryLayers;
-      var weathermap = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
-                url : 'https://mesonet.agron.iastate.edu/cgi-bin/wms/goes/conus_ir.cgi?',
-                layers : 'goes_conus_ir',
-                credit : 'Infrared data courtesy Iowa Environmental Mesonet',
-                parameters : {
-                    transparent : 'true',
-                    format : 'image/png'
-                }
-            }));
-      weathermap.alpha = 0.3;
-      weathermap.brightness = 2.0;
+      // var layers = viewer.imageryLayers;
+      // var weathermap = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+      //           url : 'https://mesonet.agron.iastate.edu/cgi-bin/wms/goes/conus_ir.cgi?',
+      //           layers : 'goes_conus_ir',
+      //           credit : 'Infrared data courtesy Iowa Environmental Mesonet',
+      //           parameters : {
+      //               transparent : 'true',
+      //               format : 'image/png'
+      //           }
+      //       }));
+      // weathermap.alpha = 0.3;
+      // weathermap.brightness = 2.0;
 
-      var dataSource2 = Cesium.KmlDataSource.load('/cesium_assets/Cesium/Assets/Schefflera.glb', {
-          stroke: Cesium.Color.HOTPINK,
-          fill: Cesium.Color.PINK,
-          strokeWidth: 3,
-          markerSymbol: '?',
-          camera: viewer.camera,
-          canvas: viewer.canvas
-      });
-      viewer.dataSources.add(dataSource2)
+      // var dataSource2 = Cesium.KmlDataSource.load('/cesium_assets/Cesium/Assets/Schefflera.glb', {
+      //     stroke: Cesium.Color.HOTPINK,
+      //     fill: Cesium.Color.PINK,
+      //     strokeWidth: 3,
+      //     markerSymbol: '?',
+      //     camera: viewer.camera,
+      //     canvas: viewer.canvas
+      // });
+      // viewer.dataSources.add(dataSource2)
+
+      
 
 
 
     }
   $(function() {
       globe();
+      $(".cesium-infoBox-iframe").attr("sandbox", "allow-same-origin allow-scripts allow-popups allow-forms")
     });
   </script>
 <% end %>
