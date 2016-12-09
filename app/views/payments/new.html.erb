@@ -7,10 +7,10 @@
             <!-- PAYMENT BUTTON  -->
             <div class="container-form-payment">
                 <p style="color: white; text-align: center; padding-top: 20px; padding-bottom: 20px">
-                Grâce à vous, un arbre sera planté en Amazonie péruvienne, selon le modèle de l'agroforesterie. Votre cadeau aura un impact sur le sol, l'air, la biodiversité et plus largement le climat. Merci !
+                Grâce à vous, il sera planté <%= "#{@certificate.trees_quantity} #{'arbre'.pluralize(@certificate.trees_quantity)}" %> en Amazonie péruvienne, selon le modèle de l'agroforesterie. Votre cadeau aura un impact sur le sol, l'air, la biodiversité et plus largement le climat. Merci !
               </p>
               <div class="text-center">
-                <button id="stripe-trigger" class="btn btn-treehouse-pay">Payez 5€ par CB</button>
+                <button id="stripe-trigger" class="btn btn-treehouse-pay">Payez <%= @certificate.trees_quantity * 5 %>€ par CB</button>
 
               </div>
             </div>
@@ -20,7 +20,7 @@
               data-email="<%= current_user.email %>"
               data-name="My Tree"
               data-description="My Tree"
-              data-amount="500"
+              data-amount="<%= @certificate.trees_quantity * 500 %>" 
               data-currency="EUR">
               // amount in cents
             </script>
