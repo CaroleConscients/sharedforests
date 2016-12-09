@@ -94,6 +94,41 @@
   text-decoration: none;
   color: white;
 }
+
+.btn-treehouse-pay {
+  width: 200px;
+  font-family: "Muli", sans-serif;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $green;
+  transition: background 0.3s ease;
+}
+.btn-treehouse-pay:hover {
+  opacity: 1;
+  background: #5faa89;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-treehouse-free {
+  width: 700px;
+  font-family: "Muli", sans-serif;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $green;
+  transition: background 0.3s ease;
+}
+.btn-treehouse-free:hover {
+  opacity: 1;
+  background: #5faa89;
+  text-decoration: none;
+  color: white;
+}
+
 // transform: rotate(180deg) scale(1, 1);
 
 
